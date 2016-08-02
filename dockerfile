@@ -20,7 +20,9 @@ RUN \
 # install runtime packages
 RUN \
  apk add --no-cache \
-	#####
+	php5-sqlite \
+	php5-gd \
+	php5-intl \
 	
 # add local files
 COPY root/ /
