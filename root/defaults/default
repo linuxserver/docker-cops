@@ -1,1 +1,39 @@
+server {
+	listen 80 default_server;
+
+	listen 443 ssl;
+	server_name _;
+
+	root /config/www/cops/;
+	index feed.php;
+  
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;  
+
+	#Useful only for Kobo reader
+		location /download/ {
+          rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3 last;
+          rewrite ^/download/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2 last;
+          break;
+        }
+
+        #Can break loading the images - if you don't see anything, comment
+        location ~ ^/images.*\.(gif|png|ico|jpg)$ {
+                expires 31d;
+        }
+        #Can also break loading the images, comment if it happens
+        location ~ .(js|css|eot|svg|woff|ttf)$ {
+                expires 31d;
+        }
+
+    location ~ \.php$ {
+		include /etc/nginx/fastcgi_params;
+		fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		fastcgi_pass 	unix:/var/run/php5-fpm.sock;
+    }
+
+	location = / {
+    rewrite ^ /books/ redirect;
+    }
+}
 
