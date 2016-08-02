@@ -12,7 +12,7 @@
     /*
      * Catalog's title
      */
-    $config['cops_title_default'] = "Neil & Lucy's Library";
+    $config['cops_title_default'] = "COPS";
     
     /*
      * use URL rewriting for downloading of ebook in HTML catalog
