@@ -22,9 +22,9 @@
      */
     $config['cops_use_url_rewriting'] = "0";
 	
-	$config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.gmail.com",
-												"smtp.username" => "",
-												"smtp.password" => "",
-												"smtp.secure"   => "ssl",
-												"address.from"  => "COPS"
+	$config['cops_mail_configuration'] = array( 	"smtp.host"     => "smtp.gmail.com",
+							"smtp.username" => "",
+							"smtp.password" => "",
+							"smtp.secure"   => "ssl",
+							"address.from"  => "COPS"
 ); 
