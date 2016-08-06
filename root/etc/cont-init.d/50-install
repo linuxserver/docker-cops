@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bash
+
+# install cops
+if [ ! -e "/config/www/books/index.php" ]; then
+curl -o \
+ /tmp/cops.tar.gz -L \
+	https://github.com/seblucas/cops/archive/1.0.0.tar.gz
+mkdir -p \
+	/config/www/books
+tar xf /tmp/cops.tar.gz -C \
+	/config/www/books --strip-components=1
+fi
+
+# permissions
+chown -R abc:abc /config/www
