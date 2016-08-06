@@ -1,0 +1,39 @@
+server {
+
+    listen 80 default_server;
+
+    server_name _;
+
+    access_log  /config/log/nginx/opds.access.log;
+    error_log /config/log/nginx/opds.error.log;
+    root   /config/www/books;
+    index feed.php;
+
+    #Useful only for Kobo reader
+    location /books/ {
+          rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3 last;
+          rewrite ^/download/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2 last;
+          break;
+        }
+
+        #Can break loading the images - if you don't see anything, comment
+        location ~ ^/images.*\.(gif|png|ico|jpg)$ {
+                expires 31d;
+        }
+        #Can also break loading the images, comment if it happens
+        location ~ .(js|css|eot|svg|woff|ttf)$ {
+                expires 31d;
+        }
+
+    #Not necessarily correct, it depends on distro.
+    location ~ \.php$ {
+       include /etc/nginx/fastcgi_params;
+       fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+       fastcgi_pass    127.0.0.1:9000;
+    }
+
+#     location /Calibre {
+#         root /home/calibre/Dropbox;
+#         internal;
+#    }
+}
