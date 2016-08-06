@@ -32,8 +32,8 @@ server {
        fastcgi_pass    127.0.0.1:9000;
     }
 
-#     location /Calibre {
-#         root /home/calibre/Dropbox;
-#         internal;
-#    }
+   location /calibre {
+        root /books/;
+       internal;
+  }
 }
