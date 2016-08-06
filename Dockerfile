@@ -7,6 +7,7 @@ MAINTAINER chbmb
 RUN \
  apk add --no-cache \
 	curl \
+	php5-dom \
 	php5-gd \
 	php5-intl \
 	php5-pdo_sqlite \
