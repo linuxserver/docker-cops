@@ -9,7 +9,7 @@
      */
     $config['calibre_directory'] = '/books/';
 	
-	$config['calibre_internal_directory'] = '/cops/'; 
+	$config['calibre_internal_directory'] = '/books/'; 
     
     /*
      * Catalog's title
