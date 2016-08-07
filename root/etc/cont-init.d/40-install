@@ -1,19 +1,19 @@
 #!/usr/bin/with-contenv bash
 
 # install cops
-if [ ! -e "/config/www/books/index.php" ]; then
+if [ ! -e "/config/www/cops/index.php" ]; then
 curl -o \
  /tmp/cops.tar.gz -L \
 	"https://github.com/seblucas/cops/archive/${COPS_VER}.tar.gz"
 mkdir -p \
-	/config/www/books
+	/config/www/cops
 tar xf /tmp/cops.tar.gz -C \
-	/config/www/books --strip-components=1
+	/config/www/cops --strip-components=1
 fi
 
 # copy config
-[[ ! -e /config/www/books/config-local.php ]] && \
-	cp /defaults/config-local.php /config/www/books/config-local.php
+[[ ! -e /config/www/cops/config-local.php ]] && \
+	cp /defaults/config-local.php /config/www/cops/config-local.php
 
 # permissions
 chown -R abc:abc \
