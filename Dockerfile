@@ -12,8 +12,6 @@ RUN \
 	php5-gd \
 	php5-intl \
 	php5-pdo_sqlite \
-	php5-sqlite3 \
-	sqlite \
 	tar
 
 # add local files
