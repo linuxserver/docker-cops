@@ -4,12 +4,17 @@
 if [ ! -e "/config/www/books/index.php" ]; then
 curl -o \
  /tmp/cops.tar.gz -L \
-	https://github.com/seblucas/cops/archive/1.0.0.tar.gz
+	"https://github.com/seblucas/cops/archive/${COPS_VER}.tar.gz"
 mkdir -p \
 	/config/www/books
 tar xf /tmp/cops.tar.gz -C \
 	/config/www/books --strip-components=1
 fi
 
+# copy config
+[[ ! -e /config/www/books/config-local.php ]] && \
+	cp /defaults/config-local.php /config/www/books/config-local.php
+
 # permissions
-chown -R abc:abc /config/www
+chown -R abc:abc \
+	/config/www
