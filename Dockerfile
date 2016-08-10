@@ -13,7 +13,10 @@ RUN \
 	php5-intl \
 	php5-pdo_sqlite \
 	tar
-
+ 
+ apk add —no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+	mini-sendmail
+	
 # add local files
 COPY root/ /
 
