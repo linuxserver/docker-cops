@@ -15,7 +15,7 @@ RUN \
 	tar
 
 RUN \ 
- apk add —no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
+ apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
 	mini-sendmail
 	
 # add local files
