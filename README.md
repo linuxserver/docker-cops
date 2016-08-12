@@ -10,6 +10,8 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 COPS, by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
 
+COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.
+
 See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.
 
 Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
