@@ -54,6 +54,8 @@
      *                                           "smtp.secure"   => "ssl",
      *                                           "address.from"  => "cops@slucas.fr"
      *                                           );
+     *
+     * You'll also need to enable Allow Less Secure Apps in you Gmail account.
      */
 
 	$config['cops_mail_configuration'] = array( "smtp.host"     => "",
