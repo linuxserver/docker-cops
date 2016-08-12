@@ -11,16 +11,13 @@ RUN \
 	php5-dom \
 	php5-gd \
 	php5-intl \
+	php5-openssl \
 	php5-pdo_sqlite \
 	tar
 
-RUN \ 
- apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing \
-	mini-sendmail
-	
 # add local files
 COPY root/ /
 
 # ports and volumes
-VOLUME /config /books
 EXPOSE 80 443
+VOLUME /config /books
