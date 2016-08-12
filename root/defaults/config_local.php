@@ -41,7 +41,7 @@
      *  0 : disable
      */
 
-	$config['cops_mail_configuration'] = array( "smtp.host"     => "",
+	$config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.gmail.com",
 						    "smtp.username" => "",
 						    "smtp.password" => "",
 						    "smtp.secure"   => "ssl",
