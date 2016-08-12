@@ -8,13 +8,13 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 # linuxserver/cops
 
-COPS stands for Calibre OPDS (and HTML) Php Server.
+COPS, by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
 
 See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.
 
 Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
 
-# Why ?
+# Why? (Taken from the author's site)
 
 In my opinion Calibre is a marvelous tool but is too big and has too much
 dependencies to be used for its content server.
@@ -80,7 +80,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Info
 
-* To monitor the logs of the container in realtime `docker logs -f couchpotato`.
+* To monitor the logs of the container in realtime `docker logs -f cops`.
 
 ## Version Log
 
