@@ -14,7 +14,7 @@ See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for mo
 
 Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
 
-##Why? (taken from the author's site)
+## Why? (taken from the author's site)
 
 In my opinion Calibre is a marvelous tool but is too big and has too much
 dependencies to be used for its content server.
