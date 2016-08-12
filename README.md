@@ -76,7 +76,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application 
 
-Unlike other implementations of COPS in a docker container the linuxserver version gives you access to `config_local.php` in `/config/www/cops/` to customise your install to suit your needs.  It also contains all the dependencies to use the email facility.
+Unlike other implementations of COPS in a docker container,  the linuxserver version gives you access to `config_local.php` in `/config/www/cops/` to customise your install to suit your needs, including details of your email account etc...
 
 ## Info
 
