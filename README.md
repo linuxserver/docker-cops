@@ -14,7 +14,7 @@ See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for mo
 
 Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
 
-# Why? (Taken from the author's site)
+##Why? (taken from the author's site)
 
 In my opinion Calibre is a marvelous tool but is too big and has too much
 dependencies to be used for its content server.
@@ -39,9 +39,7 @@ If you want to use the OPDS feed don't forget to specify feed.php at the end of 
 
 # Docker Container
 
-Unlike other implementations of COPS in a docker container this gives you access to `config_local.php` to customise your install to suit your needs.  It also contains all the dependencies to use the email facility.
-
-`config_local.php` is found in `/config/www/cops/`
+Unlike other implementations of COPS in a docker container the linuxserver version gives you access to `config_local.php` in `/config/www/cops/` to customise your install to suit your needs.  It also contains all the dependencies to use the email facility.
 
 ## Usage
 
