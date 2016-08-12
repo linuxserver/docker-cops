@@ -35,13 +35,28 @@
 	 $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
 
     /*
-     * use URL rewriting for downloading of ebook in HTML catalog
-     * See README for more information
-     *  1 : enable
-     *  0 : disable
+     * Enable and configure Send To Kindle (or Email) feature.
+     *
+     * Don't forget to authorize the sender email you configured in your Kindle's  Approved Personal Document E-mail List.
+     *
+     * If you want to use a simple smtp server (provided by your ISP for example), you can configure it like that :
+     * $config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.free.fr",
+     *                                           "smtp.username" => "",
+     *                                           "smtp.password" => "",
+     *                                           "smtp.secure"   => "",
+     *                                           "address.from"  => "cops@slucas.fr"
+     *                                           );
+     *
+     * For Gmail (ssl is mandatory) :
+     * $config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.gmail.com",
+     *                                           "smtp.username" => "YOUR GMAIL ADRESS",
+     *                                           "smtp.password" => "YOUR GMAIL PASSWORD",
+     *                                           "smtp.secure"   => "ssl",
+     *                                           "address.from"  => "cops@slucas.fr"
+     *                                           );
      */
 
-	$config['cops_mail_configuration'] = array( "smtp.host"     => "smtp.gmail.com",
+	$config['cops_mail_configuration'] = array( "smtp.host"     => "",
 						    "smtp.username" => "",
 						    "smtp.password" => "",
 						    "smtp.secure"   => "ssl",
