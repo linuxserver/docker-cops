@@ -1,12 +1,16 @@
 ![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
+
 The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring easy user mapping and community support. Find us for support at:
 * [forum.linuxserver.io](https://forum.linuxserver.io)
 * [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
 * [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
+
 # linuxserver/cops
+
 COPS, by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
 See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.
 Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
+
 ## Why? (taken from the author's site)
 In my opinion Calibre is a marvelous tool but is too big and has too much
 dependencies to be used for its content server.
@@ -23,6 +27,7 @@ So COPS's main advantages are :
  * With Dropbox / owncloud it's very easy to have an up to date OPDS server.
  * It was fun to code.
 If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
+
 ## Usage
 ```
 docker create \
