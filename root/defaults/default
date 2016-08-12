@@ -1,18 +1,13 @@
 server {
 
     listen 80 default_server;
-
-	listen 443 ssl;
-	
+    listen 443 ssl;
     server_name _;
-	
-	ssl_certificate /config/keys/cert.crt;
+    ssl_certificate /config/keys/cert.crt;
     ssl_certificate_key /config/keys/cert.key;
-
     access_log  /config/log/nginx/access.log;
     error_log /config/log/nginx/error.log;
-    
-	root   /config/www/cops;
+    root   /var/www/localhost/cops;
     index index.php;
 
     #Useful only for Kobo reader

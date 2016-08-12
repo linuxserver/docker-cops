@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+# make symlink
+[[ ! -e /var/www/localhost/cops ]] && \
+	ln -s /usr/share/webapps/cops /var/www/localhost/cops
+
+# copy config
+[[ ! -e /config/config_local.php ]] && \
+	cp /defaults/config_local.php /config/config_local.php
+cp /config/config_local.php /var/www/localhost/cops/
+
+# permissions
+chown -R abc:abc \
+	/config \
+	/usr/share/webapps/cops \
+	var/www/localhost/cops
