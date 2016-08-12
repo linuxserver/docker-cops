@@ -36,5 +36,5 @@ RUN \
 COPY root/ /
 
 # ports and volumes
-EXPOSE 80 443
+EXPOSE 80
 VOLUME /config /books
