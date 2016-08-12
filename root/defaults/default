@@ -6,8 +6,8 @@ server {
 
     access_log  /config/log/nginx/opds.access.log;
     error_log /config/log/nginx/opds.error.log;
-    root   /config/www/cops;
-    index feed.php;
+    root   /config/www/;
+    index index.php;
 
     #Useful only for Kobo reader
     location /cops/ {
