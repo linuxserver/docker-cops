@@ -7,6 +7,10 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 
 
 # linuxserver/cops
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/cops.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/cops.svg)][hub]
+[![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-cops)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-cops/)
+[hub]: https://hub.docker.com/r/linuxserver/cops/
 
 COPS, by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
 
@@ -41,7 +45,8 @@ So COPS's main advantages are :
 
 If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
 
-# Docker Container
+[![cops](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png)][copsurl]
+[copsurl]: http://blog.slucas.fr/en/oss/calibre-opds-php-server
 
 ## Usage
 
