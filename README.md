@@ -93,4 +93,5 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Version Log
 
-+ **12.08.16:** Release
++ **28.08.16:** Add badges to README.
++ + **12.08.16:** Release
