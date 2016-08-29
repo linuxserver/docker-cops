@@ -33,7 +33,10 @@
      */
 
 	 $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
-
+    /* Enable cache folder
+     * especially useful for lower power hosts
+     */
+         $config['cops_thumbnail_cache_directory'] = "/cache";
     /*
      * Enable and configure Send To Kindle (or Email) feature.
      *
