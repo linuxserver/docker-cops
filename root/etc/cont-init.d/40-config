@@ -2,7 +2,7 @@
 
 # create folders
 mkdir -p \
-	/cache
+	/config/cache
 
 # make symlink
 [[ ! -e /var/www/localhost/cops ]] && \
@@ -15,7 +15,6 @@ cp /config/config_local.php /var/www/localhost/cops/
 
 # permissions
 chown -R abc:abc \
-	/cache \
 	/config \
 	/usr/share/webapps/cops \
 	var/www/localhost/cops
