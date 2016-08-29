@@ -1,5 +1,9 @@
 #!/usr/bin/with-contenv bash
 
+# create folders
+mkdir -p \
+	/config/cache
+
 # make symlink
 [[ ! -e /var/www/localhost/cops ]] && \
 	ln -s /usr/share/webapps/cops /var/www/localhost/cops
