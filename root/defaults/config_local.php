@@ -36,7 +36,8 @@
     /* Enable cache folder
      * especially useful for lower power hosts
      */
-         $config['cops_thumbnail_cache_directory'] = "/cache";
+         $config['cops_thumbnail_handling'] = "";
+         $config['cops_thumbnail_cache_directory'] = "/cache/";
     /*
      * Enable and configure Send To Kindle (or Email) feature.
      *
