@@ -12,7 +12,8 @@ RUN \
 	php5-intl \
 	php5-opcache \
 	php5-openssl \
-	php5-pdo_sqlite
+	php5-pdo_sqlite \
+	php5-zlib
 
 # install cops
 RUN \
