@@ -87,7 +87,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application 
 
-Unlike other implementations of COPS in a docker container,  the linuxserver version gives you access to `config_local.php` in `/config` to customise your install to suit your needs, including details of your email account etc...
+Unlike other implementations of COPS in a docker container,  the linuxserver version gives you access to `config_local.php` in `/config` to customise your install to suit your needs, including details of your email account etc to enable emailing of books, it also includes the dependencies required to directly view epub books in your browser.
 
 ## Info
 
@@ -95,6 +95,7 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Version Log
 
++ **28.09.16:** Add php5-zlib.
 + **11.09.16:** Add layer badges to README.
 + **29.08.16:** Add php5-opcache.
 + **28.08.16:** Add badges to README.
