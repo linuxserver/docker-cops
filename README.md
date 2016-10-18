@@ -110,7 +110,7 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Versions
 
-+ **14-10-16:** Add version layer information.
++ **14.10.16:** Add version layer information.
 + **28.09.16:** Add php5-zlib.
 + **11.09.16:** Add layer badges to README.
 + **29.08.16:** Add php5-opcache.
