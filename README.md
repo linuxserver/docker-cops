@@ -110,6 +110,7 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Versions
 
++ **24.10.16:** Updated to implement user based config.
 + **24.10.16:** Updated to version 1.0.1.
 + **14.10.16:** Add version layer information.
 + **28.09.16:** Add php5-zlib.
