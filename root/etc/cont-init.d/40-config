@@ -11,7 +11,7 @@ mkdir -p \
 # copy config
 [[ ! -e /config/config_local.php ]] && \
 	cp /defaults/config_local.php /config/config_local.php
-cp /config/config_local.php /var/www/localhost/cops/
+cp /config/config_local*.php /var/www/localhost/cops/
 
 # permissions
 chown -R abc:abc \
