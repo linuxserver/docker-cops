@@ -8,6 +8,9 @@ mkdir -p \
 [[ ! -e /var/www/localhost/cops ]] && \
 	ln -s /usr/share/webapps/cops /var/www/localhost/cops
 
+# clear previous config
+rm /var/www/localhost/cops/config_local.*.php
+
 # copy config
 [[ ! -e /config/config_local.php ]] && \
 	cp /defaults/config_local.php /config/config_local.php
