@@ -9,7 +9,10 @@ mkdir -p \
 	ln -s /usr/share/webapps/cops /var/www/localhost/cops
 
 # clear previous config
-rm /var/www/localhost/cops/config_local.*.php
+if [-e /var/www/localhost/cops/config_local.*.php]
+then
+    rm /var/www/localhost/cops/config_local.*.php
+fi
 
 # copy config
 [[ ! -e /config/config_local.php ]] && \
