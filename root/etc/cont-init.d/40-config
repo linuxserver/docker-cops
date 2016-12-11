@@ -10,9 +10,8 @@ mkdir -p \
 
 # clear previous config
 for f in /var/www/localhost/cops/config_local.*.php
-do
-   # if file, delete it
-   [ -f "$f" ] && rm "$f"
+do 
+[ -f "$f" ] && rm "$f"
 done
 
 # copy config
@@ -20,8 +19,10 @@ done
 	cp /defaults/config_local.php /config/config_local.php
 
 # copy extra user-profiles
-[[ -e /config/config_local*.php ]] && \
-   cp /config/config_local*.php /var/www/localhost/cops/
+for f in /config/config_local*.php
+do 
+cp "$f" /var/www/localhost/cops/
+done
 
 # permissions
 chown -R abc:abc \
