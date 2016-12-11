@@ -9,12 +9,20 @@ mkdir -p \
 	ln -s /usr/share/webapps/cops /var/www/localhost/cops
 
 # clear previous config
-rm /var/www/localhost/cops/config_local.*.php
+for f in /var/www/localhost/cops/config_local.*.php
+do 
+[ -f "$f" ] && rm "$f"
+done
 
 # copy config
 [[ ! -e /config/config_local.php ]] && \
 	cp /defaults/config_local.php /config/config_local.php
-cp /config/config_local*.php /var/www/localhost/cops/
+
+# copy extra user-profiles
+for f in /config/config_local*.php
+do 
+cp "$f" /var/www/localhost/cops/
+done
 
 # permissions
 chown -R abc:abc \
