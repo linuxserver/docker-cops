@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx
+FROM lsiobase/alpine.nginx:3.5
 MAINTAINER chbmb
 
 # set version label
@@ -12,13 +12,13 @@ ENV COPS_VER="1.0.1"
 # install runtime packages
 RUN \
  apk add --no-cache \
-	php5-dom \
-	php5-gd \
-	php5-intl \
-	php5-opcache \
-	php5-openssl \
-	php5-pdo_sqlite \
-	php5-zlib
+	php7-dom \
+	php7-gd \
+	php7-intl \
+	php7-opcache \
+	php7-openssl \
+	php7-pdo_sqlite \
+	php7-zlib
 
 # install cops
 RUN \
