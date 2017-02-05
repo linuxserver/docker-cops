@@ -15,6 +15,7 @@ RUN \
 	php7-dom \
 	php7-gd \
 	php7-intl \
+	php7-mbstring \
 	php7-opcache \
 	php7-openssl \
 	php7-pdo_sqlite \
