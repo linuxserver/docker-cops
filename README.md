@@ -110,6 +110,7 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Versions
 
++ **05.02.17:** Updated to Alpine 3.5 & PHP7.
 + **24.10.16:** Updated to implement user based config.
 + **24.10.16:** Updated to version 1.0.1.
 + **14.10.16:** Add version layer information.
