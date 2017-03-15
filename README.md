@@ -2,6 +2,8 @@
 [forumurl]: https://forum.linuxserver.io
 [ircurl]: https://www.linuxserver.io/irc/
 [podcasturl]: https://www.linuxserver.io/podcast/
+[appurl]: http://blog.slucas.fr/en/oss/calibre-opds-php-server
+[hub]: https://hub.docker.com/r/linuxserver/cops/
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -12,7 +14,6 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 # linuxserver/cops
 [![](https://images.microbadger.com/badges/version/linuxserver/cops.svg)](https://microbadger.com/images/linuxserver/cops "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/cops.svg)](http://microbadger.com/images/linuxserver/cops "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/cops.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/cops.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-cops)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-cops/)
-[hub]: https://hub.docker.com/r/linuxserver/cops/
 
 COPS, by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
 
@@ -47,8 +48,7 @@ So COPS's main advantages are :
 
 If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
 
-[![cops](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png)][copsurl]
-[copsurl]: http://blog.slucas.fr/en/oss/calibre-opds-php-server
+[![cops](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png)][appurl]
 
 ## Usage
 
