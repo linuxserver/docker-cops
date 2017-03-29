@@ -12,6 +12,11 @@ ENV COPS_VER="1.0.1"
 # install runtime packages
 RUN \
  apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/main \
+	icu-libs \
+	libwebp && \
+ apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7-dom \
 	php7-gd \
 	php7-intl \
