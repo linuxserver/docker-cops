@@ -7,7 +7,7 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
 # set package version
-ENV COPS_VER="1.0.1"
+ENV COPS_VER="1.1.0"
 
 # install runtime packages
 RUN \
