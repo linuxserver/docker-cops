@@ -66,5 +66,5 @@
 						    "smtp.username" => "",
 						    "smtp.password" => "",
 						    "smtp.secure"   => "ssl",
-						    "address.from"  => "COPS"
+						    "address.from"  => "cops@ebook.com"
 );
