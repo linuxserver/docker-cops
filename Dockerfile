@@ -56,6 +56,7 @@ RUN \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
+	/root/.composer \
 	/tmp/*
 
 # add local files
