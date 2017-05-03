@@ -27,6 +27,7 @@ RUN \
 	php7-openssl \
 	php7-phar \
 	php7-pdo_sqlite \
+	php7-xml \
 	php7-zip \
 	php7-zlib && \
 
