@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx:3.5
+FROM lsiobase/alpine.nginx:3.6
 MAINTAINER chbmb
 
 # set version label
@@ -14,11 +14,6 @@ RUN \
 
 # install runtime packages
  apk add --no-cache \
-	--repository http://nl.alpinelinux.org/alpine/edge/main \
-	icu-libs \
-	libwebp && \
- apk add --no-cache \
-	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7-dom \
 	php7-gd \
 	php7-intl \
