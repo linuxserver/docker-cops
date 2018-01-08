@@ -1,18 +1,17 @@
-FROM lsiobase/alpine.nginx:3.6
-MAINTAINER chbmb
+FROM lsiobase/alpine.nginx:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="chbmb"
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	curl \
 	tar && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	php7-dom \
 	php7-gd \
@@ -24,16 +23,14 @@ RUN \
 	php7-pdo_sqlite \
 	php7-zip \
 	php7-zlib && \
-
-# install composer
+ echo "**** install composer ****" && \
  ln -sf /usr/bin/php7 /usr/bin/php && \
  curl \
     -sS https://getcomposer.org/installer \
     | php -- --install-dir=/usr/bin --filename=composer && \
  composer \
 	global require "fxp/composer-asset-plugin:~1.1" && \
-
-# install cops
+ echo "**** install cops ****" && \
  COPS_VER=$(curl -sX GET "https://api.github.com/repos/seblucas/cops/releases/latest" \
 	| awk '/tag_name/{print $4;exit}' FS='[""]') && \
  curl -o \
@@ -46,8 +43,7 @@ RUN \
  cd /usr/share/webapps/cops && \
  composer \
 	install --no-dev --optimize-autoloader && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
