@@ -13,6 +13,7 @@ RUN \
 	tar && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+	php7-ctype \
 	php7-dom \
 	php7-gd \
 	php7-intl \
