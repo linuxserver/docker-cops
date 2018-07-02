@@ -110,6 +110,7 @@ Unlike other implementations of COPS in a docker container,  the linuxserver ver
 
 ## Versions
 
++ **02.07.18:** Add php7-ctype dependency.
 + **08.01.18:** Rebase to alpine 3.7.
 + **25.05.17:** Rebase to alpine 3.6.
 + **03.04.17:** Add composer packages, reduce layers.
