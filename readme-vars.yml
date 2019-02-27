@@ -82,6 +82,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "27.02.19:", desc: "Upgrade packages during install to prevent mismatch with baseimage." }
   - { date: "22.02.19:", desc: "Rebasing to alpine 3.9." }
   - { date: "14.01.19:", desc: "Add multiarch and pipeline logic." }
   - { date: "21.08.18:", desc: "Rebase to alpine 3.8." }

@@ -182,6 +182,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **27.02.19:** - Upgrade packages during install to prevent mismatch with baseimage.
 * **22.02.19:** - Rebasing to alpine 3.9.
 * **14.01.19:** - Add multiarch and pipeline logic.
 * **21.08.18:** - Rebase to alpine 3.8.
