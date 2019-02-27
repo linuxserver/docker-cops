@@ -9,11 +9,11 @@ LABEL maintainer="chbmb"
 
 RUN \
  echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
+ apk add --no-cache --upgrade --virtual=build-dependencies \
 	curl \
 	tar && \
  echo "**** install runtime packages ****" && \
- apk add --no-cache \
+ apk add --no-cache --upgrade \
 	php7-ctype \
 	php7-dom \
 	php7-gd \
