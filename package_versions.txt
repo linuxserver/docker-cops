@@ -12,7 +12,7 @@ ca-certificates-cacert-20191127-r1
 coreutils-8.31-r0
 expat-2.2.9-r1
 freetype-2.10.1-r0
-git-2.24.1-r0
+git-2.24.2-r0
 icu-libs-64.2-r1
 libacl-2.2.53-r0
 libattr-2.4.48-r0
