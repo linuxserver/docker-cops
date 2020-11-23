@@ -29,7 +29,7 @@ RUN \
  ln -sf /usr/bin/php7 /usr/bin/php && \
  curl \
 	-sS https://getcomposer.org/installer \
-	| php -- --install-dir=/usr/bin --filename=composer && \
+	| php -- --install-dir=/usr/bin --filename=composer --version=1.10.17 && \
  composer \
 	global require "fxp/composer-asset-plugin:~1.1" && \
  echo "**** install cops ****" && \
