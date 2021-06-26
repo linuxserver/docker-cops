@@ -11,7 +11,7 @@ server {
     index index.php;
 
     #Useful only for Kobo reader
-    location /cops/ {
+    location / {
           rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3 last;
           rewrite ^/download/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2 last;
           break;
