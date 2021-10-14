@@ -2,30 +2,29 @@
 
 # create folders
 mkdir -p \
-	/config/cache
-
-# make symlink
-[[ ! -e /var/www/localhost/cops ]] && \
-	ln -s /usr/share/webapps/cops /var/www/localhost/cops
+    /config/cache
 
 # clear previous config
-for f in /var/www/localhost/cops/config_local.*.php
+for f in /app/www/public/config_local.*.php
 do 
-[ -f "$f" ] && rm "$f"
+    if [ -f "$f" ]; then
+        rm "$f"
+    fi
 done
 
 # copy config
-[[ ! -e /config/config_local.php ]] && \
-	cp /defaults/config_local.php /config/config_local.php
+if [[ ! -e /config/config_local.php ]]; then
+    cp /defaults/config_local.php /config/config_local.php
+fi
 
 # copy extra user-profiles
 for f in /config/config_local*.php
 do 
-cp "$f" /var/www/localhost/cops/
+cp "$f" /app/www/public/
 done
 
 # permissions
 chown -R abc:abc \
-	/config \
-	/usr/share/webapps/cops \
-	var/www/localhost/cops
+    /config \
+    /app/www/public \
+    var/www/localhost/cops

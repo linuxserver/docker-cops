@@ -1,0 +1,47 @@
+## Version 2022/08/20 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name _;
+
+    root /app/www/public;
+    index index.html index.htm index.php;
+
+    #Useful only for Kobo reader
+    location /cops/ {
+        rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3 last;
+        rewrite ^/download/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2 last;
+        break;
+    }
+
+    #Can break loading the images - if you don't see anything, comment
+    location ~ ^/images.*\.(gif|png|ico|jpg)$ {
+        expires 31d;
+    }
+    #Can also break loading the images, comment if it happens
+    location ~ .(js|css|eot|svg|woff|ttf)$ {
+        expires 31d;
+    }
+
+    location /books {
+        root /;
+        internal;
+    }
+
+    location ~ ^(.+\.php)(.*)$ {
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    # deny access to .htaccess/.htpasswd files
+    location ~ /\.ht {
+        deny all;
+    }
+}
