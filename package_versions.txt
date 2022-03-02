@@ -11,7 +11,7 @@ busybox-1.31.1-r21
 ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
 coreutils-8.32-r0
-expat-2.2.10-r0
+expat-2.2.10-r2
 freetype-2.10.4-r0
 git-2.26.3-r0
 icu-libs-67.1-r0
