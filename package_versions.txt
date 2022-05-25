@@ -12,7 +12,7 @@ ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
 coreutils-8.32-r0
 expat-2.2.10-r4
-freetype-2.10.4-r1
+freetype-2.10.4-r2
 git-2.26.3-r1
 icu-libs-67.1-r0
 libacl-2.2.53-r0
