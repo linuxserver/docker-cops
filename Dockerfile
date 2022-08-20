@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm32v7-3.15
 
 # set version label
 ARG BUILD_DATE
@@ -10,7 +10,6 @@ LABEL maintainer="chbmb"
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --upgrade --virtual=build-dependencies \
-    composer \
     curl \
     tar && \
   echo "**** install runtime packages ****" && \
@@ -27,6 +26,9 @@ RUN \
     php8-zip \
     php8-zlib && \
   echo "**** install cops ****" && \
+  curl \
+    -sS https://getcomposer.org/installer \
+    | php -- --install-dir=/usr/bin --filename=composer --version=1.10.26 && \
   composer \
     global require "fxp/composer-asset-plugin:~1.1" && \
   if [ -z ${COPS_RELEASE+x} ]; then \
@@ -43,6 +45,7 @@ RUN \
   cd /app/www/public && \
   composer \
     install --no-dev --optimize-autoloader && \
+  sed -i 's|^[[:space:]]*return[[:space:]]@create_function[[:space:]]'\(''\''\$it'\'',[[:space:]]\$func'\)';|        return function \(\$it\) use \(\$func\) \{\n            return eval\(\$func\);\n            \};|' vendor/seblucas/dot-php/doT.php && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
