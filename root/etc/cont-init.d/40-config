@@ -26,5 +26,4 @@ done
 # permissions
 chown -R abc:abc \
     /config \
-    /app/www/public \
-    var/www/localhost/cops
+    /app/www/public
