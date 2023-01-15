@@ -1,12 +1,12 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 # create folders
 mkdir -p \
     /config/cache
 
 # clear previous config
-for f in /app/www/public/config_local.*.php
-do 
+for f in /app/www/public/config_local.*.php; do
     if [ -f "$f" ]; then
         rm "$f"
     fi
@@ -18,9 +18,8 @@ if [[ ! -e /config/config_local.php ]]; then
 fi
 
 # copy extra user-profiles
-for f in /config/config_local*.php
-do 
-cp "$f" /app/www/public/
+for f in /config/config_local*.php; do
+    cp "$f" /app/www/public/
 done
 
 # permissions
