@@ -22,7 +22,6 @@ for f in /config/config_local*.php; do
     cp "$f" /app/www/public/
 done
 
-# permissions
-chown -R abc:abc \
-    /config \
-    /app/www/public
+# permissions
+lsiown -R abc:abc \
+    /config
