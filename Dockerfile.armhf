@@ -1,4 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm32v7-3.15
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm32v7-3.17
 
 # set version label
 ARG BUILD_DATE
@@ -8,23 +10,19 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="chbmb"
 
 RUN \
-  echo "**** install build packages ****" && \
-  apk add --no-cache --upgrade --virtual=build-dependencies \
-    curl \
-    tar && \
   echo "**** install runtime packages ****" && \
   apk add --no-cache --upgrade \
-    php8-ctype \
-    php8-dom \
-    php8-gd \
-    php8-intl \
-    php8-mbstring \
-    php8-opcache \
-    php8-openssl \
-    php8-phar \
-    php8-pdo_sqlite \
-    php8-zip \
-    php8-zlib && \
+    php81-ctype \
+    php81-dom \
+    php81-gd \
+    php81-intl \
+    php81-mbstring \
+    php81-opcache \
+    php81-openssl \
+    php81-phar \
+    php81-pdo_sqlite \
+    php81-zip \
+    php81-zlib && \
   echo "**** install cops ****" && \
   curl \
     -sS https://getcomposer.org/installer \
@@ -47,8 +45,6 @@ RUN \
     install --no-dev --optimize-autoloader && \
   sed -i 's|^[[:space:]]*return[[:space:]]@create_function[[:space:]]'\(''\''\$it'\'',[[:space:]]\$func'\)';|        return function \(\$it\) use \(\$func\) \{\n            return eval\(\$func\);\n            \};|' vendor/seblucas/dot-php/doT.php && \
   echo "**** cleanup ****" && \
-  apk del --purge \
-    build-dependencies && \
   rm -rf \
     /root/.composer \
     /tmp/*
