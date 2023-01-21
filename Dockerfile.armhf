@@ -16,13 +16,10 @@ RUN \
     php81-dom \
     php81-gd \
     php81-intl \
-    php81-mbstring \
     php81-opcache \
-    php81-openssl \
     php81-phar \
     php81-pdo_sqlite \
-    php81-zip \
-    php81-zlib && \
+    php81-zip && \
   echo "**** install cops ****" && \
   curl \
     -sS https://getcomposer.org/installer \
