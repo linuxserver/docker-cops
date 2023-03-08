@@ -452,7 +452,8 @@ pipeline {
       }
       steps {
         echo "Running on node: ${NODE_NAME}"
-        sh "docker build \
+        sh "sed -r -i 's|(^FROM .*)|\\1\\n\\nENV LSIO_FIRST_PARTY=true|g' Dockerfile"
+        sh "docker buildx build \
           --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
           --label \"org.opencontainers.image.authors=linuxserver.io\" \
           --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-cops/packages\" \
@@ -465,7 +466,7 @@ pipeline {
           --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
           --label \"org.opencontainers.image.title=Cops\" \
           --label \"org.opencontainers.image.description=[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.    Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.  \" \
-          --no-cache --pull -t ${IMAGE}:${META_TAG} \
+          --no-cache --pull -t ${IMAGE}:${META_TAG} --platform=linux/amd64 \
           --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
       }
     }
@@ -482,7 +483,8 @@ pipeline {
         stage('Build X86') {
           steps {
             echo "Running on node: ${NODE_NAME}"
-            sh "docker build \
+            sh "sed -r -i 's|(^FROM .*)|\\1\\n\\nENV LSIO_FIRST_PARTY=true|g' Dockerfile"
+            sh "docker buildx build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
               --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-cops/packages\" \
@@ -495,7 +497,7 @@ pipeline {
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.title=Cops\" \
               --label \"org.opencontainers.image.description=[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.    Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.  \" \
-              --no-cache --pull -t ${IMAGE}:amd64-${META_TAG} \
+              --no-cache --pull -t ${IMAGE}:amd64-${META_TAG} --platform=linux/amd64 \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
           }
         }
@@ -509,7 +511,8 @@ pipeline {
             sh '''#! /bin/bash
                   echo $GITHUB_TOKEN | docker login ghcr.io -u LinuxServer-CI --password-stdin
                '''
-            sh "docker build \
+            sh "sed -r -i 's|(^FROM .*)|\\1\\n\\nENV LSIO_FIRST_PARTY=true|g' Dockerfile.armhf"
+            sh "docker buildx build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
               --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-cops/packages\" \
@@ -522,7 +525,7 @@ pipeline {
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.title=Cops\" \
               --label \"org.opencontainers.image.description=[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.    Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.  \" \
-              --no-cache --pull -f Dockerfile.armhf -t ${IMAGE}:arm32v7-${META_TAG} \
+              --no-cache --pull -f Dockerfile.armhf -t ${IMAGE}:arm32v7-${META_TAG} --platform=linux/arm/v7 \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh "docker tag ${IMAGE}:arm32v7-${META_TAG} ghcr.io/linuxserver/lsiodev-buildcache:arm32v7-${COMMIT_SHA}-${BUILD_NUMBER}"
             retry(5) {
@@ -543,7 +546,8 @@ pipeline {
             sh '''#! /bin/bash
                   echo $GITHUB_TOKEN | docker login ghcr.io -u LinuxServer-CI --password-stdin
                '''
-            sh "docker build \
+            sh "sed -r -i 's|(^FROM .*)|\\1\\n\\nENV LSIO_FIRST_PARTY=true|g' Dockerfile.aarch64"
+            sh "docker buildx build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
               --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-cops/packages\" \
@@ -556,7 +560,7 @@ pipeline {
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.title=Cops\" \
               --label \"org.opencontainers.image.description=[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.    Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.  \" \
-              --no-cache --pull -f Dockerfile.aarch64 -t ${IMAGE}:arm64v8-${META_TAG} \
+              --no-cache --pull -f Dockerfile.aarch64 -t ${IMAGE}:arm64v8-${META_TAG} --platform=linux/arm64 \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh "docker tag ${IMAGE}:arm64v8-${META_TAG} ghcr.io/linuxserver/lsiodev-buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER}"
             retry(5) {
@@ -585,26 +589,12 @@ pipeline {
               else
                 LOCAL_CONTAINER=${IMAGE}:${META_TAG}
               fi
-              if [ "${DIST_IMAGE}" == "alpine" ]; then
-                docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  apk info -v > /tmp/package_versions.txt && \
-                  sort -o /tmp/package_versions.txt  /tmp/package_versions.txt && \
-                  chmod 777 /tmp/package_versions.txt'
-              elif [ "${DIST_IMAGE}" == "ubuntu" ]; then
-                docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  apt list -qq --installed | sed "s#/.*now ##g" | cut -d" " -f1 > /tmp/package_versions.txt && \
-                  sort -o /tmp/package_versions.txt  /tmp/package_versions.txt && \
-                  chmod 777 /tmp/package_versions.txt'
-              elif [ "${DIST_IMAGE}" == "fedora" ]; then
-                docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  rpm -qa > /tmp/package_versions.txt && \
-                  sort -o /tmp/package_versions.txt  /tmp/package_versions.txt && \
-                  chmod 777 /tmp/package_versions.txt'
-              elif [ "${DIST_IMAGE}" == "arch" ]; then
-                docker run --rm --entrypoint '/bin/sh' -v ${TEMPDIR}:/tmp ${LOCAL_CONTAINER} -c '\
-                  pacman -Q > /tmp/package_versions.txt && \
-                  chmod 777 /tmp/package_versions.txt'
-              fi
+              touch ${TEMPDIR}/package_versions.txt
+              docker run --rm \
+                -v /var/run/docker.sock:/var/run/docker.sock:ro \
+                -v ${TEMPDIR}:/tmp \
+                ghcr.io/anchore/syft:latest \
+                ${LOCAL_CONTAINER} -o table=/tmp/package_versions.txt
               NEW_PACKAGE_TAG=$(md5sum ${TEMPDIR}/package_versions.txt | cut -c1-8 )
               echo "Package tag sha from current packages in buit container is ${NEW_PACKAGE_TAG} comparing to old ${PACKAGE_TAG} from github"
               if [ "${NEW_PACKAGE_TAG}" != "${PACKAGE_TAG}" ]; then
