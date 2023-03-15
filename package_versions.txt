@@ -5,7 +5,7 @@ alpine-baselayout-data     3.4.0-r0               apk
 alpine-keys                2.4-r1                 apk           
 alpine-release             3.17.2-r0              apk           
 aom-libs                   3.5.0-r0               apk           
-apache2-utils              2.4.55-r0              apk           
+apache2-utils              2.4.56-r0              apk           
 apk-tools                  2.12.10-r1             apk           
 apr                        1.7.2-r0               apk           
 apr-util                   1.6.3-r0               apk           
@@ -28,7 +28,7 @@ dimsemenov/magnific-popup  1.1.0                  php-composer
 dot                        1.0.3                  npm           
 dot-express-example        0.0.1                  npm           
 freetype                   2.12.1-r0              apk           
-git                        2.38.4-r0              apk           
+git                        2.38.4-r1              apk           
 icu-data-en                72.1-r1                apk           
 icu-libs                   72.1-r1                apk           
 jing                                              java-archive  
