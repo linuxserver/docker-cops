@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+This image is deprecated. We will not offer support for this image and it will not be updated.
+COPS has been abandoned by its developers and no actively maintained forks exist at this time.
 <!--- Provide a general summary of your changes in the Title above -->
 
 [linuxserverurl]: https://linuxserver.io

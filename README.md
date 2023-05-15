@@ -27,6 +27,10 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
+# DEPRECATION NOTICE
+
+This image is deprecated. We will not offer support for this image and it will not be updated.
+COPS has been abandoned by its developers and no actively maintained forks exist at this time.
 # [linuxserver/cops](https://github.com/linuxserver/docker-cops)
 
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fcops?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fcops)
@@ -258,6 +262,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **15.05.23:** - Deprecate due to upstream dev abandonment of project.
 * **13.04.23:** - Move ssl.conf include to default.conf.
 * **19.01.23:** - Rebase to alpine 3.17 with php8.1.
 * **20.08.22:** - Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base)).
