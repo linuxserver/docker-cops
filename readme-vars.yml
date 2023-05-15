@@ -39,6 +39,8 @@ project_blurb: |
   If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
 
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_deprecation_status: true
+project_deprecation_message: "COPS has been abandoned by its developers and no actively maintained forks exist at this time."
 project_blurb_optional_extras_enabled: false
 
 # supported architectures
@@ -84,6 +86,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "15.05.23:". desc: "Deprecate due to upstream dev abandonment of project." }
   - { date: "13.04.23:", desc: "Move ssl.conf include to default.conf." }
   - { date: "19.01.23:", desc: "Rebase to alpine 3.17 with php8.1." }
   - { date: "20.08.22:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base))." }
