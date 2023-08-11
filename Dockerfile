@@ -15,10 +15,7 @@ RUN \
     php82-gd \
     php82-intl \
     php82-pdo_sqlite \
-    php82-sqlite3 \
-    php82-xml \
-    php82-xmlwriter \
-    php82-zip && \
+    php82-sqlite3 && \
   echo "**** configure php-fpm to pass env vars ****" && \
   sed -E -i 's/^;?clear_env ?=.*$/clear_env = no/g' /etc/php82/php-fpm.d/www.conf && \
   grep -qxF 'clear_env = no' /etc/php82/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php82/php-fpm.d/www.conf && \
