@@ -27,12 +27,6 @@ Find us at:
 * [GitHub](https://github.com/linuxserver) - view the source for all of our repositories.
 * [Open Collective](https://opencollective.com/linuxserver) - please consider helping us by either donating or contributing to our budget
 
-# DEPRECATION NOTICE
-
-This image is deprecated. We will not offer support for this image and it will not be updated.
-COPS has been abandoned by its developers and no actively maintained forks exist at this time.
-# [linuxserver/cops](https://github.com/linuxserver/docker-cops)
-
 [![Scarf.io pulls](https://scarf.sh/installs-badge/linuxserver-ci/linuxserver%2Fcops?color=94398d&label-color=555555&logo-color=ffffff&style=for-the-badge&package-type=docker)](https://scarf.sh/gateway/linuxserver-ci/docker/linuxserver%2Fcops)
 [![GitHub Stars](https://img.shields.io/github/stars/linuxserver/docker-cops.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-cops)
 [![GitHub Release](https://img.shields.io/github/release/linuxserver/docker-cops.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/linuxserver/docker-cops/releases)
@@ -44,7 +38,7 @@ COPS has been abandoned by its developers and no actively maintained forks exist
 [![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-cops%2Fjob%2Fmaster%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-cops/job/master/)
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fcops%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/cops/latest/index.html)
 
-[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server.
+[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.
 
 COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.
 
@@ -91,7 +85,6 @@ The architectures supported by this image are:
 | :----: | :----: | ---- |
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
-| armhf | ✅ | arm32v7-\<version tag\> |
 
 ## Application Setup
 
@@ -262,6 +255,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.08.23:** - Undeprecate and add new branch with mikespub fork which is actively maintained.
 * **15.05.23:** - Deprecate due to upstream dev abandonment of project.
 * **13.04.23:** - Move ssl.conf include to default.conf.
 * **19.01.23:** - Rebase to alpine 3.17 with php8.1.
