@@ -8,8 +8,8 @@ release_tag: latest
 ls_branch: mikespub
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
-  - EXT_USER = 'mikespub'
-  - EXT_REPO = 'cops'
+  - EXT_USER = 'mikespub-org'
+  - EXT_REPO = 'seblucas-cops'
   - BUILD_VERSION_ARG = 'COPS_RELEASE'
   - LS_USER = 'linuxserver'
   - LS_REPO = 'docker-cops'
