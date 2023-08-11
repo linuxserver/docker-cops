@@ -33,7 +33,6 @@ RUN \
   tar xf /tmp/cops.tar.gz -C \
     /app/www/public --strip-components=1 && \
   cd /app/www/public && \
-  # use standard composer 2.x now, no need to install older 1.x version
   composer \
     install --no-dev --optimize-autoloader && \
   echo "**** cleanup ****" && \
