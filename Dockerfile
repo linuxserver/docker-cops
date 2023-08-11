@@ -1,6 +1,3 @@
-# syntax=docker/dockerfile:1
-
-# update to alpine 3.18 from archived linuxserver/docker-cops version
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.18
 
 # set version label
@@ -12,7 +9,6 @@ LABEL maintainer="chbmb"
 
 RUN \
   echo "**** install runtime packages ****" && \
-  # update to PHP 8.2 from archived linuxserver/docker-cops version
   apk add --no-cache --upgrade \
     # libxml2 \
     php82-dom \
