@@ -14,7 +14,6 @@ RUN \
     php82-dom \
     php82-gd \
     php82-intl \
-    php82-mbstring \
     php82-pdo_sqlite \
     php82-sqlite3 \
     php82-xml \
