@@ -21,7 +21,6 @@ RUN \
   grep -qxF 'clear_env = no' /etc/php82/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php82/php-fpm.d/www.conf && \
   echo "env[PATH] = /usr/local/bin:/usr/bin:/bin" >> /etc/php82/php-fpm.conf && \
   echo "**** install cops ****" && \
-  # use fork mikespub-org/seblucas-cops for PHP 8.x
   if [ -z ${COPS_RELEASE+x} ]; then \
     COPS_RELEASE=$(curl -sX GET "https://api.github.com/repos/mikespub-org/seblucas-cops/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
