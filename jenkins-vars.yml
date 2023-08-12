@@ -5,9 +5,9 @@ project_name: docker-cops
 external_type: github_stable
 release_type: stable
 release_tag: latest
-ls_branch: mikespub
+ls_branch: master
 repo_vars:
-  - EXT_GIT_BRANCH = 'master'
+  - EXT_GIT_BRANCH = 'main'
   - EXT_USER = 'mikespub-org'
   - EXT_REPO = 'seblucas-cops'
   - BUILD_VERSION_ARG = 'COPS_RELEASE'
