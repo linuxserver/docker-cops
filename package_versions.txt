@@ -28,7 +28,7 @@ icu-data-en                 73.2-r2                 apk
 icu-libs                    73.2-r2                 apk           
 jing                                                java-archive  
 jq                          1.6-r3                  apk           
-jquery                      3.7.0                   npm           
+jquery                      3.7.1                   npm           
 js-cookie                   2.2.1                   npm           
 libacl                      2.3.1-r3                apk           
 libattr                     2.5.1-r4                apk           
@@ -80,7 +80,7 @@ normalize.css               8.0.1                   npm
 npm-asset/bootstrap         3.4.1                   php-composer  
 npm-asset/corejs-typeahead  1.3.3                   php-composer  
 npm-asset/dot               1.1.3                   php-composer  
-npm-asset/jquery            3.7.0                   php-composer  
+npm-asset/jquery            3.7.1                   php-composer  
 npm-asset/js-cookie         2.2.1                   php-composer  
 npm-asset/lru-fast          0.2.2                   php-composer  
 npm-asset/magnific-popup    1.1.0                   php-composer  
@@ -110,7 +110,7 @@ php82-sqlite3               8.2.9-r0                apk
 php82-xml                   8.2.8-r0                apk           
 php82-xmlwriter             8.2.8-r0                apk           
 php82-zip                   8.2.8-r0                apk           
-phpmailer/phpmailer         v6.8.0                  php-composer  
+phpmailer/phpmailer         v6.8.1                  php-composer  
 popt                        1.19-r2                 apk           
 procps-ng                   4.0.3-r1                apk           
 readline                    8.2.1-r1                apk           
