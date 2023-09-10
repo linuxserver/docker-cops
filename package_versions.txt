@@ -238,8 +238,9 @@ linux-pam                                                                      1
 locutus                                                                        2.0.16                  npm           
 logrotate                                                                      3.21.0-r1               apk           
 lru-fast                                                                       0.2.2                   npm           
+maennchen/zipstream-php                                                        3.1.0                   php-composer  
 magnific-popup                                                                 1.1.0                   npm           
-mikespub/php-epub-meta                                                         1.5.2                   php-composer  
+mikespub/php-epub-meta                                                         2.0.2                   php-composer  
 minimatch                                                                      3.0.8                   npm           
 musl                                                                           1.2.4-r1                apk           
 musl-utils                                                                     1.2.4-r1                apk           
