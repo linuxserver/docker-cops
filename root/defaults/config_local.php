@@ -1,7 +1,15 @@
 <?php
     if (!isset($config))
         $config = array();
-
+   /*
+    ***************************************************
+    * Please read config_default.php for all possible
+    * configuration items.
+    * For changes in config_default.php see CHANGELOG.md
+    * on the upstream project site.
+    * https://github.com/mikespub-org/seblucas-cops/blob/main/config_default.php
+    ***************************************************
+    */
     /*
      * The directory containing calibre's metadata.db file, with sub-directories
      * containing all the formats.
