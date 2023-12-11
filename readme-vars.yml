@@ -2,7 +2,7 @@
 
 # project information
 project_name: cops
-project_url: "http://blog.slucas.fr/en/oss/calibre-opds-php-server"
+project_url: "https://github.com/mikespub-org/seblucas-cops/wiki"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.
@@ -11,44 +11,15 @@ project_blurb: |
 
   Changes in your Calibre library are reflected immediately in your COPS pages.
 
-  See : [COPS's home]({{ project_url }}) for more details.
-
-  Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
-
-  ## Why? (taken from the author's site)
-
-  In my opinion Calibre is a marvelous tool but is too big and has too much
-  dependencies to be used for its content server.
-
-  That's the main reason why I coded this OPDS server. I needed a simple
-  tool to be installed on a small server (Seagate Dockstar in my case).
-
-  I initially thought of Calibre2OPDS but as it generate static file no
-  search was possible.
-
-  Later I added an simple HTML catalog that should be usable on my Kobo.
-
-  So COPS's main advantages are :
-   * No need for many dependencies.
-   * No need for a lot of CPU or RAM.
-   * Not much code.
-   * Search is available.
-   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.
-   * It was fun to code.
-
-  If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
-
+  See : [COPS's Wiki]({{ project_url }}) for more details.
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
-
 # supported architectures
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
 # development version
 development_versions: false
-
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -58,29 +29,17 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "COPS Application Data." }
-  - { vol_path: "/books", vol_host_path: "<path to data>", desc: "Calibre metadata.db location." }
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "COPS Application Data." }
+  - { vol_path: "/books", vol_host_path: "/path/to/data", desc: "Calibre metadata.db location." }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "80", internal_port: "80", port_desc: "WebUI" }
-param_device_map: false
-cap_add_param: false
-
-# optional container parameters
-opt_param_usage_include_env: false
-opt_param_usage_include_vols: false
-opt_param_usage_include_ports: false
-opt_param_device_map: false
-opt_cap_add_param: false
-optional_block_1: false
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   Access the webui at `http://<docker host ip>:80`. For connecting via OPDS on a mobile device use `http://<docker host ip>:80/feed.php`. It is strongly suggested that you reverse proxy this prior to exposing to the internet. For more information, such as requiring credentials, check the COPS Wiki (linked above).
   
   The linuxserver version gives you access to `config_local.php` in `/config` to customise your install to suit your needs, it also includes the dependencies required to directly view epub books in your browser.
-
 # changelog
 changelogs:
   - { date: "11.12.23:", desc: "Rebase to alpine 3.19 with php8.3." }
