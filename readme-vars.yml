@@ -83,6 +83,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "11.12.23:", desc: "Rebase to alpine 3.19 with php8.3." }
   - { date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained." }
   - { date: "15.05.23:", desc: "Deprecate due to upstream dev abandonment of project." }
   - { date: "13.04.23:", desc: "Move ssl.conf include to default.conf." }
