@@ -83,6 +83,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
   - { date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained." }
   - { date: "15.05.23:", desc: "Deprecate due to upstream dev abandonment of project." }
   - { date: "13.04.23:", desc: "Move ssl.conf include to default.conf." }
