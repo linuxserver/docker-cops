@@ -323,6 +323,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **25.12.23:** - Existing users should update: site-confs/default.conf - Cleanup default site conf.
 * **11.08.23:** - Undeprecate and add new branch with mikespub fork which is actively maintained.
 * **15.05.23:** - Deprecate due to upstream dev abandonment of project.
 * **13.04.23:** - Move ssl.conf include to default.conf.
