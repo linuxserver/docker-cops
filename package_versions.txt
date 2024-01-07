@@ -306,7 +306,7 @@ symfony/polyfill-ctype                                                         v
 symfony/polyfill-mbstring                                                      v1.28.0                 php-composer  
 twig                                                                           1.16.0                  npm           
 twig/twig                                                                      v3.7.1                  php-composer  
-tzdata                                                                         2023c-r1                apk           
+tzdata                                                                         2023d-r0                apk           
 utmps-libs                                                                     0.1.2.1-r1              apk           
 walk                                                                           2.3.15                  npm           
 xz-libs                                                                        5.4.3-r0                apk           
