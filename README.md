@@ -111,10 +111,11 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - <path to data>:/config
-      - <path to data>:/books
+      - /path/to/cops/config:/config
+      - /path/to/data:/books
     ports:
       - 80:80
+      - 443:443
     restart: unless-stopped
 ```
 
@@ -127,8 +128,9 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -p 80:80 \
-  -v <path to data>:/config \
-  -v <path to data>:/books \
+  -p 443:443 \
+  -v /path/to/cops/config:/config \
+  -v /path/to/data:/books \
   --restart unless-stopped \
   lscr.io/linuxserver/cops:latest
 ```
@@ -139,7 +141,8 @@ Containers are configured using parameters passed at runtime (such as those abov
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 80` | WebUI |
+| `-p 80` | HTTP WebUI |
+| `-p 443` | HTTPS WebUI |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
@@ -307,6 +310,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.03.24:** - Rebase to Alpine 3.19.
 * **25.12.23:** - Existing users should update: site-confs/default.conf - Cleanup default site conf.
 * **11.08.23:** - Undeprecate and add new branch with mikespub fork which is actively maintained.
 * **15.05.23:** - Deprecate due to upstream dev abandonment of project.
