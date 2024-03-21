@@ -52,37 +52,25 @@ development_versions: false
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-param_usage_include_net: false
-param_usage_include_env: true
-param_env_vars:
-  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "COPS Application Data." }
-  - { vol_path: "/books", vol_host_path: "<path to data>", desc: "Calibre metadata.db location." }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "COPS Application Data." }
+  - { vol_path: "/books", vol_host_path: "/path/to/data", desc: "Calibre metadata.db location." }
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "80", internal_port: "80", port_desc: "WebUI" }
-param_device_map: false
-cap_add_param: false
-
-# optional container parameters
-opt_param_usage_include_env: false
-opt_param_usage_include_vols: false
-opt_param_usage_include_ports: false
-opt_param_device_map: false
-opt_cap_add_param: false
-optional_block_1: false
+  - { external_port: "80", internal_port: "80", port_desc: "HTTP WebUI" }
+  - { external_port: "443", internal_port: "443", port_desc: "HTTPS WebUI" }
 
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   Access the webui at `http://<docker host ip>:80`. For connecting via OPDS on a mobile device use `http://<docker host ip>:80/feed.php`. It is strongly suggested that you reverse proxy this prior to exposing to the internet. For more information, such as requiring credentials, check the COPS Wiki (linked above).
-  
+
   The linuxserver version gives you access to `config_local.php` in `/config` to customise your install to suit your needs, it also includes the dependencies required to directly view epub books in your browser.
 
 # changelog
 changelogs:
+  - { date: "20.03.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
   - { date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained." }
   - { date: "15.05.23:", desc: "Deprecate due to upstream dev abandonment of project." }
