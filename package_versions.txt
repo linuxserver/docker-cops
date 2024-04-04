@@ -1,6 +1,5 @@
 NAME                           VERSION                TYPE           
-@babel/runtime                 7.24.0                 npm             
-@mikespub/epubjs-reader        2024.3.5               npm             
+@babel/runtime                 7.24.1                 npm             
 OPDSValidator                                         java-archive    
 alpine-baselayout              3.4.3-r2               apk             
 alpine-baselayout-data         3.4.3-r2               apk             
@@ -32,6 +31,7 @@ coreutils-sha512sum            9.4-r2                 apk
 curl                           8.5.0-r0               apk             
 dot                            1.1.3                  npm             
 dot-express-example            0.0.1                  npm             
+epubjs-reader                  0.3.1                  npm             
 foreachasync                   3.0.0                  npm             
 freetype                       2.13.2-r0              apk             
 git                            2.43.0-r0              apk             
@@ -84,8 +84,8 @@ logrotate                      3.21.0-r1              apk
 lru-fast                       0.2.2                  npm             
 maennchen/zipstream-php        3.1.0                  php-composer    
 magnific-popup                 1.1.0                  npm             
-mikespub/epubjs-reader         2024.3.5               php-composer    
-mikespub/php-epub-meta         2.2.2                  php-composer    
+mikespub/epubjs-reader         2024.4.4               php-composer    
+mikespub/php-epub-meta         2.2.3                  php-composer    
 minimatch                      3.0.8                  npm             
 musl                           1.2.4_git20230717-r4   apk             
 musl-utils                     1.2.4_git20230717-r4   apk             
@@ -96,7 +96,7 @@ nghttp2-libs                   1.58.0-r0              apk
 nginx                          1.24.0-r15             apk             
 nikic/fast-route               dev-master             php-composer    
 normalize.css                  8.0.1                  npm             
-npm-asset/babel--runtime       7.24.0                 php-composer    
+npm-asset/babel--runtime       7.24.1                 php-composer    
 npm-asset/balanced-match       1.0.2                  php-composer    
 npm-asset/bootstrap            3.4.1                  php-composer    
 npm-asset/brace-expansion      1.1.11                 php-composer    
@@ -111,7 +111,7 @@ npm-asset/lru-fast             0.2.2                  php-composer
 npm-asset/magnific-popup       1.1.0                  php-composer    
 npm-asset/minimatch            3.0.8                  php-composer    
 npm-asset/normalize.css        8.0.1                  php-composer    
-npm-asset/regenerator-runtime  0.14.0                 php-composer    
+npm-asset/regenerator-runtime  0.14.1                 php-composer    
 npm-asset/twig                 1.17.1                 php-composer    
 npm-asset/walk                 2.3.15                 php-composer    
 oniguruma                      6.9.9-r0               apk             
@@ -144,7 +144,7 @@ popt                           1.19-r3                apk
 procps-ng                      4.0.4-r0               apk             
 psr/simple-cache               3.0.0                  php-composer    
 readline                       8.2.1-r2               apk             
-regenerator-runtime            0.14.0                 npm             
+regenerator-runtime            0.14.1                 npm             
 scanelf                        1.3.7-r2               apk             
 shadow                         4.14.2-r0              apk             
 skalibs                        2.14.0.1-r0            apk             
