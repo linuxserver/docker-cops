@@ -1,5 +1,6 @@
 NAME                           VERSION                TYPE           
-@babel/runtime                 7.24.4                 npm             
+@babel/runtime                 7.24.5                 npm             
+@mikespub/epubjs-reader        2024.4.23              npm             
 OPDSValidator                                         java-archive    
 alpine-baselayout              3.4.3-r2               apk             
 alpine-baselayout-data         3.4.3-r2               apk             
@@ -31,7 +32,6 @@ coreutils-sha512sum            9.4-r2                 apk
 curl                           8.5.0-r0               apk             
 dot                            1.1.3                  npm             
 dot-express-example            0.0.1                  npm             
-epubjs-reader                  0.3.1                  npm             
 findutils                      4.9.0-r5               apk             
 foreachasync                   3.0.0                  npm             
 freetype                       2.13.2-r0              apk             
@@ -84,7 +84,7 @@ logrotate                      3.21.0-r1              apk
 lru-fast                       0.2.2                  npm             
 maennchen/zipstream-php        3.1.0                  php-composer    
 magnific-popup                 1.1.0                  npm             
-mikespub/epubjs-reader         2024.4.9               php-composer    
+mikespub/epubjs-reader         2024.4.23              php-composer    
 mikespub/php-epub-meta         2.2.3                  php-composer    
 minimatch                      3.0.8                  npm             
 musl                           1.2.4_git20230717-r4   apk             
@@ -96,7 +96,7 @@ nghttp2-libs                   1.58.0-r0              apk
 nginx                          1.24.0-r16             apk             
 nikic/fast-route               dev-master             php-composer    
 normalize.css                  8.0.1                  npm             
-npm-asset/babel--runtime       7.24.4                 php-composer    
+npm-asset/babel--runtime       7.24.5                 php-composer    
 npm-asset/balanced-match       1.0.2                  php-composer    
 npm-asset/bootstrap            3.4.1                  php-composer    
 npm-asset/brace-expansion      1.1.11                 php-composer    
@@ -150,11 +150,12 @@ shadow                         4.14.2-r0              apk
 skalibs                        2.14.0.1-r0            apk             
 sqlite-libs                    3.44.2-r0              apk             
 ssl_client                     1.36.1-r15             apk             
+symfony/deprecation-contracts  v3.5.0                 php-composer    
 symfony/polyfill-ctype         v1.29.0                php-composer    
 symfony/polyfill-mbstring      v1.29.0                php-composer    
 symfony/polyfill-php80         v1.29.0                php-composer    
 twig                           1.17.1                 npm             
-twig/twig                      v3.8.0                 php-composer    
+twig/twig                      v3.9.3                 php-composer    
 tzdata                         2024a-r0               apk             
 utmps-libs                     0.1.2.2-r0             apk             
 walk                           2.3.15                 npm             
