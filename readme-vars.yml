@@ -70,6 +70,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "07.05.24:", desc: "Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf." }
   - { date: "20.03.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
   - { date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained." }
