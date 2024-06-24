@@ -66,7 +66,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "24.06.24:", desc: "Rebase to Alpine 3.20." }
+  - { date: "24.06.24:", desc: "Rebase to Alpine 3.20. Existing users should update their nginx confs to avoid http2 deprecation warnings." }
   - { date: "07.05.24:", desc: "Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf." }
   - { date: "20.03.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
