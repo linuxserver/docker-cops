@@ -38,6 +38,15 @@ RUN \
   composer \
     install --no-dev --optimize-autoloader && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
+  echo "***install kepubify" && \
+  if [ -z ${KEPUBIFY_RELEASE+x} ]; then \
+    KEPUBIFY_RELEASE=$(curl -sX GET "https://api.github.com/repos/pgaskin/kepubify/releases/latest" \
+      | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+  fi && \
+  curl -o \
+    /usr/bin/kepubify -L \
+    "https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit" && \
+  chmod 755 /usr/bin/kepubify && \
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.composer \
