@@ -66,6 +66,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "01.09.24:", desc: "Existing users should verify: config_local.php - define $config['cops_kepubify_path'] if you want to use it" }
   - { date: "28.08.24:", desc: "Add kepubify tool to update metadata for Kobo - see mikespub-org/seblucas-cops#77" }
   - { date: "24.06.24:", desc: "Rebase to Alpine 3.20. Existing users should update their nginx confs to avoid http2 deprecation warnings." }
   - { date: "07.05.24:", desc: "Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf." }
