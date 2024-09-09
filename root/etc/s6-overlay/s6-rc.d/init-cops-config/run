@@ -23,7 +23,13 @@ done
 
 # copy config
 if [[ ! -e /config/config/local.php ]]; then
-    cp /defaults/config/local.php /config/config/local.php
+    if [[ -e /config/config_local.php ]]; then
+        echo "**** Existing config found, migrating for v3. Please check the contents of /config/config/local.php which will be the active config in v3 ****"
+        cp /config/config_local.php /config/config/local.php
+    else
+        echo "**** New instance detected, generating default config at /config/config/local.php ****"
+        cp /defaults/config/local.php /config/config/local.php
+    fi
 fi
 
 # copy extra user-profiles
