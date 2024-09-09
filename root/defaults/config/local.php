@@ -32,7 +32,7 @@
      */
     $config['cops_use_url_rewriting'] = "0";
 
-	/*
+    /*
      * Which header to use when downloading books outside the web directory
      * Possible values are :
      *   X-Accel-Redirect   : For Nginx
@@ -40,12 +40,14 @@
      *   No value (default) : Let PHP handle the download
      */
 
-	 $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
+    $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
+
     /* Enable cache folder
      * especially useful for lower power hosts
      */
-         $config['cops_thumbnail_handling'] = "";
-         $config['cops_thumbnail_cache_directory'] = "/config/cache/";
+    $config['cops_thumbnail_handling'] = "";
+    $config['cops_thumbnail_cache_directory'] = "/config/cache/";
+
     /*
      * Enable and configure Send To Kindle (or Email) feature.
      *
@@ -69,10 +71,32 @@
      *
      * You'll also need to enable Allow Less Secure Apps in you Gmail account.
      */
+    $config['cops_mail_configuration'] = array( "smtp.host"     => "",
+                            "smtp.username" => "",
+                            "smtp.password" => "",
+                            "smtp.secure"   => "ssl",
+                            "address.from"  => "cops@ebook.com"
+    );
 
-	$config['cops_mail_configuration'] = array( "smtp.host"     => "",
-						    "smtp.username" => "",
-						    "smtp.password" => "",
-						    "smtp.secure"   => "ssl",
-						    "address.from"  => "cops@ebook.com"
-);
+    /*
+     * Use external 'kepubify' tool to convert .epub files to .kepub.epub format for Kobo
+     * Example:
+     * $config['cops_kepubify_path'] = '/usr/bin/kepubify';
+     */
+    //$config['cops_kepubify_path'] = '';
+    $config['cops_kepubify_path'] = '/usr/bin/kepubify';
+
+    /*
+     * Set front controller to remove index.php/ from route URLs generated in COPS
+     *
+     * Note: this assumes your web server config will rewrite /... to /index.php/...
+     * - Apache: .htaccess
+     * - Nginx: nginx.conf
+     * - PHP built-in: router.php
+     * - ...
+     *
+     * @todo update nginx/site-confs/default.conf.sample to make use of front controller
+     */
+    $config['cops_front_controller'] = '';
+    //$config['cops_front_controller'] = 'index.php';
+
