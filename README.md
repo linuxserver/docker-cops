@@ -39,15 +39,15 @@ Find us at:
 [![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-cops%2Fjob%2Fmaster%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-cops/job/master/)
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fcops%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/cops/latest/index.html)
 
-[Cops](http://blog.slucas.fr/en/oss/calibre-opds-php-server) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.
+[Cops](https://github.com/mikespub-org/seblucas-cops) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.
 
 COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.
 
 Changes in your Calibre library are reflected immediately in your COPS pages.
 
-See : [COPS's home](http://blog.slucas.fr/en/oss/calibre-opds-php-server) for more details.
+See : [COPS's home](https://github.com/mikespub-org/seblucas-cops) for more details.
 
-Don't forget to check the [Wiki](https://github.com/seblucas/cops/wiki).
+Don't forget to check the [Wiki](https://github.com/mikespub-org/seblucas-cops/wiki).
 
 ## Why? (taken from the author's site)
 
@@ -70,9 +70,9 @@ So COPS's main advantages are :
  * With Dropbox / owncloud it's very easy to have an up to date OPDS server.
  * It was fun to code.
 
-If you want to use the OPDS feed don't forget to specify feed.php at the end of your URL.
+If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.
 
-[![cops](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png)](http://blog.slucas.fr/en/oss/calibre-opds-php-server)
+[![cops](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png)](https://github.com/mikespub-org/seblucas-cops)
 
 ## Supported Architectures
 
@@ -90,9 +90,9 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-Access the webui at `http://<docker host ip>:80`. For connecting via OPDS on a mobile device use `http://<docker host ip>:80/feed.php`. It is strongly suggested that you reverse proxy this prior to exposing to the internet. For more information, such as requiring credentials, check the COPS Wiki (linked above).
+Access the webui at `http://<docker host ip>:80`. For connecting via OPDS on a mobile device use `http://<docker host ip>:80/index.php/feed`. It is strongly suggested that you reverse proxy this prior to exposing to the internet. For more information, such as requiring credentials, check the COPS Wiki (linked above).
 
-The linuxserver version gives you access to `config_local.php` in `/config` to customise your install to suit your needs, it also includes the dependencies required to directly view epub books in your browser.
+The linuxserver version gives you access to `config/local.php` in `/config` to customise your install to suit your needs, it also includes the dependencies required to directly view epub books in your browser.
 
 ## Usage
 
@@ -310,6 +310,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **09.09.24:** - In COPS 3.x, the config_local.php is being moved over to config/local.php and this container will automatically migrate it. Existing users should verify: config_local.php and/or config/local.php - define $config['cops_kepubify_path'] if they want to use it
 * **28.08.24:** - Add kepubify tool to update metadata for Kobo - see mikespub-org/seblucas-cops#77
 * **24.06.24:** - Rebase to Alpine 3.20. Existing users should update their nginx confs to avoid http2 deprecation warnings.
 * **07.05.24:** - Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf.
