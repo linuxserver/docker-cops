@@ -161,11 +161,11 @@ sqlite-libs                         3.45.3-r1                           apk
 ssl_client                          1.36.1-r29                          apk             
 stdlib                              go1.17.8                            go-module       
 symfony/deprecation-contracts       v3.5.0                              php-composer    
-symfony/polyfill-ctype              v1.30.0                             php-composer    
-symfony/polyfill-mbstring           v1.30.0                             php-composer    
-symfony/polyfill-php81              v1.30.0                             php-composer    
+symfony/polyfill-ctype              v1.31.0                             php-composer    
+symfony/polyfill-mbstring           v1.31.0                             php-composer    
+symfony/polyfill-php81              v1.31.0                             php-composer    
 twig                                1.17.1                              npm             
-twig/twig                           v3.13.0                             php-composer    
+twig/twig                           v3.14.0                             php-composer    
 tzdata                              2024a-r1                            apk             
 utmps-libs                          0.1.2.2-r1                          apk             
 walk                                2.3.15                              npm             
