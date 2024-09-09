@@ -4,22 +4,31 @@
 # create folders
 mkdir -p \
     /config/cache
+# create folders (COPS 3.x)
+mkdir -p \
+    /config/config
 
-# clear previous config
+# clear previous config (COPS 1.x and 2.x)
 for f in /app/www/public/config_local.*.php; do
+    if [ -f "$f" ]; then
+        rm "$f"
+    fi
+done
+# clear previous config (COPS 3.x)
+for f in /app/www/public/config/local.*.php; do
     if [ -f "$f" ]; then
         rm "$f"
     fi
 done
 
 # copy config
-if [[ ! -e /config/config_local.php ]]; then
-    cp /defaults/config_local.php /config/config_local.php
+if [[ ! -e /config/config/local.php ]]; then
+    cp /defaults/config/local.php /config/config/local.php
 fi
 
 # copy extra user-profiles
-for f in /config/config_local*.php; do
-    cp "$f" /app/www/public/
+for f in /config/config/local*.php; do
+    cp "$f" /app/www/public/config/
 done
 
 # permissions

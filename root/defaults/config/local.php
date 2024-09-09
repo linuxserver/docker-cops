@@ -86,3 +86,17 @@
     //$config['cops_kepubify_path'] = '';
     $config['cops_kepubify_path'] = '/usr/bin/kepubify';
 
+    /*
+     * Set front controller to remove index.php/ from route URLs generated in COPS
+     *
+     * Note: this assumes your web server config will rewrite /... to /index.php/...
+     * - Apache: .htaccess
+     * - Nginx: nginx.conf
+     * - PHP built-in: router.php
+     * - ...
+     *
+     * @todo update nginx/site-confs/default.conf.sample to make use of front controller
+     */
+    $config['cops_front_controller'] = '';
+    //$config['cops_front_controller'] = 'index.php';
+
