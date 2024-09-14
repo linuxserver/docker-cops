@@ -34,7 +34,8 @@ fi
 
 # copy extra user-profiles
 for f in /config/config/local*.php; do
-    cp "$f" /app/www/public/config/
+    cp "${f}" /app/www/public/config/
+    chmod +r "/app/www/public/config/$(basename ${f})"
 done
 
 # permissions
