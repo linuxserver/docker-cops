@@ -5,7 +5,7 @@ OPDSValidator                                                           java-arc
 alpine-baselayout                   3.6.5-r0                            apk             
 alpine-baselayout-data              3.6.5-r0                            apk             
 alpine-keys                         2.4-r1                              apk             
-alpine-release                      3.20.2-r0                           apk             
+alpine-release                      3.20.3-r0                           apk             
 aom-libs                            3.9.1-r0                            apk             
 apache2-utils                       2.4.62-r0                           apk             
 apk-tools                           2.14.4-r0                           apk             
@@ -166,7 +166,7 @@ symfony/polyfill-mbstring           v1.31.0                             php-comp
 symfony/polyfill-php81              v1.31.0                             php-composer    
 twig                                1.17.1                              npm             
 twig/twig                           v3.14.0                             php-composer    
-tzdata                              2024a-r1                            apk             
+tzdata                              2024b-r0                            apk             
 utmps-libs                          0.1.2.2-r1                          apk             
 walk                                2.3.15                              npm             
 xz-libs                             5.6.2-r0                            apk             
