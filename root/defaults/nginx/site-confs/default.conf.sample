@@ -15,18 +15,18 @@ server {
 
     #URL rewriting with COPS - see https://github.com/seblucas/cops/wiki/Url-Rewriting-with-COPS
     location /download/ {
-        rewrite ^/download/(\d+)/(\d+)/.*\.kepub\.epub$ /fetch.php?data=$1&db=$2&type=epub last;
-        rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3 last;
-        rewrite ^/download/(\d+)/.*\.kepub\.epub$ /fetch.php?data=$1&type=epub last;
-        rewrite ^/download/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2 last;
+        #rewrite ^/download/(\d+)/(\d+)/.*\.kepub\.epub$ /index.php/fetch/$2/$1/ignore.epub last;
+        rewrite ^/download/(\d+)/(\d+)/.*\.(.*)$ /index.php/fetch/$2/$1/ignore.$3 last;
+        #rewrite ^/download/(\d+)/.*\.kepub\.epub$ /index.php/fetch/0/$1/ignore.epub last;
+        rewrite ^/download/(\d+)/.*\.(.*)$ /index.php/fetch/0/$1/ignore.$2 last;
         break;
     }
 
     location /view/ {
-        rewrite ^/view/(\d+)/(\d+)/.*\.kepub\.epub$ /fetch.php?data=$1&db=$2&type=epub&view=1 last;
-        rewrite ^/view/(\d+)/(\d+)/.*\.(.*)$ /fetch.php?data=$1&db=$2&type=$3&view=1 last;
-        rewrite ^/view/(\d+)/.*\.kepub\.epub$ /fetch.php?data=$1&type=epub&view=1 last;
-        rewrite ^/view/(\d+)/.*\.(.*)$ /fetch.php?data=$1&type=$2&view=1 last;
+        #rewrite ^/view/(\d+)/(\d+)/.*\.kepub\.epub$ /index.php/inline/$2/$1/ignore.epub last;
+        rewrite ^/view/(\d+)/(\d+)/.*\.(.*)$ /index.php/inline/$2/$1/ignore.$3 last;
+        #rewrite ^/view/(\d+)/.*\.kepub\.epub$ /index.php/inline/0/$1/ignore.epub last;
+        rewrite ^/view/(\d+)/.*\.(.*)$ /index.php/inline/0/$1/ignore.$2 last;
         break;
     }
 
