@@ -1,7 +1,7 @@
 NAME                                VERSION                             TYPE           
 @babel/runtime                      7.25.6                              npm             
 @mikespub/epubjs-reader             2024.7.15                           npm             
-OPDSValidator                                                           java-archive    
+OPDSValidator                       UNKNOWN                             java-archive    
 alpine-baselayout                   3.6.5-r0                            apk             
 alpine-baselayout-data              3.6.5-r0                            apk             
 alpine-keys                         2.4-r1                              apk             
@@ -47,7 +47,7 @@ golang.org/x/sync                   v0.0.0-20210220032951-036812b2e83c  go-modul
 golang.org/x/text                   v0.3.6                              go-module       
 icu-data-en                         74.2-r0                             apk             
 icu-libs                            74.2-r0                             apk             
-jing                                                                    java-archive    
+jing                                UNKNOWN                             java-archive    
 jq                                  1.7.1-r0                            apk             
 jquery                              3.7.1                               npm             
 js-cookie                           2.2.1                               npm             
