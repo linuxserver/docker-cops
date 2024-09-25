@@ -310,6 +310,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **24.09.24:** - Existing users should verify: site-confs/default.conf - Update rewriting rules default site conf.
 * **14.09.24:** - Ensure user config files have the right permissions.
 * **09.09.24:** - In COPS 3.x, the config_local.php is being moved over to config/local.php and this container will automatically migrate it. Existing users should verify: config_local.php and/or config/local.php - define $config['cops_kepubify_path'] if they want to use it
 * **28.08.24:** - Add kepubify tool to update metadata for Kobo - see mikespub-org/seblucas-cops#77
