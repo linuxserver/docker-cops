@@ -1,4 +1,4 @@
-## Version 2024/07/16 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2024/09/24 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;
