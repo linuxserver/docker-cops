@@ -1,5 +1,5 @@
 NAME                                VERSION                             TYPE           
-@babel/runtime                      7.25.6                              npm             
+@babel/runtime                      7.25.7                              npm             
 @mikespub/epubjs-reader             2024.7.15                           npm             
 OPDSValidator                       UNKNOWN                             java-archive    
 alpine-baselayout                   3.6.5-r0                            apk             
@@ -41,7 +41,7 @@ git-init-template                   2.45.2-r0                           apk
 github.com/beevik/etree             v1.1.0                              go-module       
 github.com/kr/smartypants           v0.1.0                              go-module       
 github.com/pgaskin/kepubify/_/html  v0.0.0-20211223234002-6ee2cc632cdc  go-module       
-github.com/pgaskin/kepubify/v4      (devel)                             go-module       
+github.com/pgaskin/kepubify/v4      v4.0.4                              go-module       
 github.com/spf13/pflag              v1.0.5                              go-module       
 golang.org/x/sync                   v0.0.0-20210220032951-036812b2e83c  go-module       
 golang.org/x/text                   v0.3.6                              go-module       
@@ -91,10 +91,10 @@ linux-pam                           1.6.0-r0                            apk
 locutus                             2.0.32                              npm             
 logrotate                           3.21.0-r1                           apk             
 lru-fast                            0.2.2                               npm             
-maennchen/zipstream-php             3.1.0                               php-composer    
+maennchen/zipstream-php             3.1.1                               php-composer    
 magnific-popup                      1.2.0                               npm             
-mikespub/epubjs-reader              2024.7.15                           php-composer    
-mikespub/php-epub-meta              3.0.0                               php-composer    
+mikespub/epubjs-reader              2024.9.29                           php-composer    
+mikespub/php-epub-meta              3.0.1                               php-composer    
 minimatch                           3.0.8                               npm             
 musl                                1.2.5-r0                            apk             
 musl-utils                          1.2.5-r0                            apk             
@@ -105,7 +105,7 @@ nghttp2-libs                        1.62.1-r0                           apk
 nginx                               1.26.2-r0                           apk             
 nikic/fast-route                    dev-master                          php-composer    
 normalize.css                       8.0.1                               npm             
-npm-asset/babel--runtime            7.25.6                              php-composer    
+npm-asset/babel--runtime            7.25.7                              php-composer    
 npm-asset/balanced-match            1.0.2                               php-composer    
 npm-asset/bootstrap                 3.4.1                               php-composer    
 npm-asset/brace-expansion           1.1.11                              php-composer    
@@ -149,7 +149,7 @@ php83-sqlite3                       8.3.12-r0                           apk
 php83-xml                           8.3.12-r0                           apk             
 php83-xmlwriter                     8.3.12-r0                           apk             
 php83-zip                           8.3.12-r0                           apk             
-phpmailer/phpmailer                 v6.9.1                              php-composer    
+phpmailer/phpmailer                 v6.9.2                              php-composer    
 popt                                1.19-r3                             apk             
 procps-ng                           4.0.4-r0                            apk             
 psr/simple-cache                    3.0.0                               php-composer    
