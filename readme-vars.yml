@@ -37,68 +37,118 @@ project_blurb: |
    * It was fun to code.
 
   If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.
-
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "COPS Application Data." }
-  - { vol_path: "/books", vol_host_path: "/path/to/data", desc: "Calibre metadata.db location." }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "COPS Application Data."}
+  - {vol_path: "/books", vol_host_path: "/path/to/data", desc: "Calibre metadata.db location."}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "80", internal_port: "80", port_desc: "HTTP WebUI" }
-  - { external_port: "443", internal_port: "443", port_desc: "HTTPS WebUI" }
-
+  - {external_port: "80", internal_port: "80", port_desc: "HTTP WebUI"}
+  - {external_port: "443", internal_port: "443", port_desc: "HTTPS WebUI"}
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
   Access the webui at `http://<docker host ip>:80`. For connecting via OPDS on a mobile device use `http://<docker host ip>:80/index.php/feed`. It is strongly suggested that you reverse proxy this prior to exposing to the internet. For more information, such as requiring credentials, check the COPS Wiki (linked above).
 
   The linuxserver version gives you access to `config/local.php` in `/config` to customise your install to suit your needs, it also includes the dependencies required to directly view epub books in your browser.
-
+# init diagram
+init_diagram: |
+  "cops:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-nginx-end -> init-config
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-cops-config -> init-config-end
+    init-nginx-end -> init-cops-config
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    init-os-end -> init-folders
+    init-php -> init-keygen
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-version-checks -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    init-samples -> init-nginx
+    init-permissions -> init-nginx-end
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-keygen -> init-permissions
+    init-nginx -> init-php
+    init-folders -> init-samples
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-config-end -> init-version-checks
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-nginx
+    svc-nginx -> legacy-services
+    init-services -> svc-php-fpm
+    svc-php-fpm -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine-nginx:3.20" <- "baseimage-alpine:3.20"
+  }
+  "cops:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "24.09.24:", desc: "Existing users should verify: site-confs/default.conf - Update rewriting rules default site conf." }
-  - { date: "14.09.24:", desc: "Ensure user config files have the right permissions." }
-  - { date: "09.09.24:", desc: "In COPS 3.x, the config_local.php is being moved over to config/local.php and this container will automatically migrate it. Existing users should verify: config_local.php and/or config/local.php - define $config['cops_kepubify_path'] if they want to use it" }
-  - { date: "28.08.24:", desc: "Add kepubify tool to update metadata for Kobo - see mikespub-org/seblucas-cops#77" }
-  - { date: "24.06.24:", desc: "Rebase to Alpine 3.20. Existing users should update their nginx confs to avoid http2 deprecation warnings." }
-  - { date: "07.05.24:", desc: "Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf." }
-  - { date: "20.03.24:", desc: "Rebase to Alpine 3.19." }
-  - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
-  - { date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained." }
-  - { date: "15.05.23:", desc: "Deprecate due to upstream dev abandonment of project." }
-  - { date: "13.04.23:", desc: "Move ssl.conf include to default.conf." }
-  - { date: "19.01.23:", desc: "Rebase to alpine 3.17 with php8.1." }
-  - { date: "20.08.22:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base))." }
-  - { date: "22.11.20:", desc: "Pin composer version to 1.10.17." }
-  - { date: "01.06.20:", desc: "Rebasing to alpine 3.12." }
-  - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
-  - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
-  - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
-  - { date: "27.02.19:", desc: "Upgrade packages during install to prevent mismatch with baseimage." }
-  - { date: "22.02.19:", desc: "Rebasing to alpine 3.9." }
-  - { date: "14.01.19:", desc: "Add multiarch and pipeline logic." }
-  - { date: "21.08.18:", desc: "Rebase to alpine 3.8." }
-  - { date: "02.07.18:", desc: "Add php7-ctype dependency." }
-  - { date: "08.01.18:", desc: "Rebase to alpine 3.7." }
-  - { date: "25.05.17:", desc: "Rebase to alpine 3.6." }
-  - { date: "03.04.17:", desc: "Add composer packages, reduce layers." }
-  - { date: "02.04.17:", desc: "Updated to version 1.1.0." }
-  - { date: "05.02.17:", desc: "Updated to Alpine 3.5 & PHP7." }
-  - { date: "24.10.16:", desc: "Updated to implement user based config." }
-  - { date: "24.10.16:", desc: "Updated to version 1.0.1." }
-  - { date: "14.10.16:", desc: "Add version layer information." }
-  - { date: "28.09.16:", desc: "Add php5-zlib." }
-  - { date: "11.09.16:", desc: "Add layer badges to README." }
-  - { date: "29.08.16:", desc: "Add php5-opcache." }
-  - { date: "28.08.16:", desc: "Add badges to README." }
-  - { date: "12.08.16:", desc: "Initial Release." }
+  - {date: "24.09.24:", desc: "Existing users should verify: site-confs/default.conf - Update rewriting rules default site conf."}
+  - {date: "14.09.24:", desc: "Ensure user config files have the right permissions."}
+  - {date: "09.09.24:", desc: "In COPS 3.x, the config_local.php is being moved over to config/local.php and this container will automatically migrate it. Existing users should verify: config_local.php and/or config/local.php - define $config['cops_kepubify_path'] if they want to use it"}
+  - {date: "28.08.24:", desc: "Add kepubify tool to update metadata for Kobo - see mikespub-org/seblucas-cops#77"}
+  - {date: "24.06.24:", desc: "Rebase to Alpine 3.20. Existing users should update their nginx confs to avoid http2 deprecation warnings."}
+  - {date: "07.05.24:", desc: "Existing users should verify: site-confs/default.conf - Fix rewriting rules default site conf."}
+  - {date: "20.03.24:", desc: "Rebase to Alpine 3.19."}
+  - {date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf."}
+  - {date: "11.08.23:", desc: "Undeprecate and add new branch with mikespub fork which is actively maintained."}
+  - {date: "15.05.23:", desc: "Deprecate due to upstream dev abandonment of project."}
+  - {date: "13.04.23:", desc: "Move ssl.conf include to default.conf."}
+  - {date: "19.01.23:", desc: "Rebase to alpine 3.17 with php8.1."}
+  - {date: "20.08.22:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base))."}
+  - {date: "22.11.20:", desc: "Pin composer version to 1.10.17."}
+  - {date: "01.06.20:", desc: "Rebasing to alpine 3.12."}
+  - {date: "19.12.19:", desc: "Rebasing to alpine 3.11."}
+  - {date: "28.06.19:", desc: "Rebasing to alpine 3.10."}
+  - {date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag."}
+  - {date: "27.02.19:", desc: "Upgrade packages during install to prevent mismatch with baseimage."}
+  - {date: "22.02.19:", desc: "Rebasing to alpine 3.9."}
+  - {date: "14.01.19:", desc: "Add multiarch and pipeline logic."}
+  - {date: "21.08.18:", desc: "Rebase to alpine 3.8."}
+  - {date: "02.07.18:", desc: "Add php7-ctype dependency."}
+  - {date: "08.01.18:", desc: "Rebase to alpine 3.7."}
+  - {date: "25.05.17:", desc: "Rebase to alpine 3.6."}
+  - {date: "03.04.17:", desc: "Add composer packages, reduce layers."}
+  - {date: "02.04.17:", desc: "Updated to version 1.1.0."}
+  - {date: "05.02.17:", desc: "Updated to Alpine 3.5 & PHP7."}
+  - {date: "24.10.16:", desc: "Updated to implement user based config."}
+  - {date: "24.10.16:", desc: "Updated to version 1.0.1."}
+  - {date: "14.10.16:", desc: "Add version layer information."}
+  - {date: "28.09.16:", desc: "Add php5-zlib."}
+  - {date: "11.09.16:", desc: "Add layer badges to README."}
+  - {date: "29.08.16:", desc: "Add php5-opcache."}
+  - {date: "28.08.16:", desc: "Add badges to README."}
+  - {date: "12.08.16:", desc: "Initial Release."}
