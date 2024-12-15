@@ -585,7 +585,7 @@ pipeline {
           --label \"org.opencontainers.image.title=Cops\" \
           --label \"org.opencontainers.image.description=[Cops](https://github.com/mikespub-org/seblucas-cops) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](https://github.com/mikespub-org/seblucas-cops) for more details.    Don't forget to check the [Wiki](https://github.com/mikespub-org/seblucas-cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.  \" \
           --no-cache --pull -t ${IMAGE}:${META_TAG} --platform=linux/amd64 \
-          --provenance=false --sbom=false --builder=container --load \
+          --provenance=true --sbom=true --builder=container --load \
           --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
         sh '''#! /bin/bash
               set -e
@@ -614,7 +614,9 @@ pipeline {
                       for i in "${CACHE[@]}"; do
                         docker push ${i}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} &
                       done
-                      wait
+                      for p in $(jobs -p); do
+                        wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                      done
                     fi
                 '''
           }
@@ -649,7 +651,7 @@ pipeline {
               --label \"org.opencontainers.image.title=Cops\" \
               --label \"org.opencontainers.image.description=[Cops](https://github.com/mikespub-org/seblucas-cops) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](https://github.com/mikespub-org/seblucas-cops) for more details.    Don't forget to check the [Wiki](https://github.com/mikespub-org/seblucas-cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.  \" \
               --no-cache --pull -t ${IMAGE}:amd64-${META_TAG} --platform=linux/amd64 \
-              --provenance=false --sbom=false --builder=container --load \
+              --provenance=true --sbom=true --builder=container --load \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh '''#! /bin/bash
                   set -e
@@ -678,7 +680,9 @@ pipeline {
                           for i in "${CACHE[@]}"; do
                             docker push ${i}:amd64-${COMMIT_SHA}-${BUILD_NUMBER} &
                           done
-                          wait
+                          for p in $(jobs -p); do
+                            wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                          done
                         fi
                     '''
               }
@@ -706,7 +710,7 @@ pipeline {
               --label \"org.opencontainers.image.title=Cops\" \
               --label \"org.opencontainers.image.description=[Cops](https://github.com/mikespub-org/seblucas-cops) by Sébastien Lucas, now maintained by MikesPub, stands for Calibre OPDS (and HTML) Php Server.    COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.    Changes in your Calibre library are reflected immediately in your COPS pages.    See : [COPS's home](https://github.com/mikespub-org/seblucas-cops) for more details.    Don't forget to check the [Wiki](https://github.com/mikespub-org/seblucas-cops/wiki).    ## Why? (taken from the author's site)    In my opinion Calibre is a marvelous tool but is too big and has too much  dependencies to be used for its content server.    That's the main reason why I coded this OPDS server. I needed a simple  tool to be installed on a small server (Seagate Dockstar in my case).    I initially thought of Calibre2OPDS but as it generate static file no  search was possible.    Later I added an simple HTML catalog that should be usable on my Kobo.    So COPS's main advantages are :   * No need for many dependencies.   * No need for a lot of CPU or RAM.   * Not much code.   * Search is available.   * With Dropbox / owncloud it's very easy to have an up to date OPDS server.   * It was fun to code.    If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.  \" \
               --no-cache --pull -f Dockerfile.aarch64 -t ${IMAGE}:arm64v8-${META_TAG} --platform=linux/arm64 \
-              --provenance=false --sbom=false --builder=container --load \
+              --provenance=true --sbom=true --builder=container --load \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh '''#! /bin/bash
                   set -e
@@ -735,7 +739,9 @@ pipeline {
                           for i in "${CACHE[@]}"; do
                             docker push ${i}:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER} &
                           done
-                          wait
+                          for p in $(jobs -p); do
+                            wait "$p" || { echo "job $p failed" >&2; exit 1; }
+                          done
                         fi
                     '''
               }
@@ -978,7 +984,7 @@ pipeline {
               echo '{"tag_name":"'${META_TAG}'",\
                      "target_commitish": "master",\
                      "name": "'${META_TAG}'",\
-                     "body": "**CI Report:**\\n\\n'${CI_URL:-N/A}'\\n\\n**LinuxServer Changes:**\\n\\n'${LS_RELEASE_NOTES}'\\n\\n**'${EXT_REPO}' Changes:**\\n\\n' > start
+                     "body": "**CI Report:**\\n\\n'${CI_URL:-N/A}'\\n\\n**LinuxServer Changes:**\\n\\n'${LS_RELEASE_NOTES}'\\n\\n**Remote Changes:**\\n\\n' > start
               printf '","draft": false,"prerelease": false}' >> releasebody.json
               paste -d'\\0' start releasebody.json > releasebody.json.done
               curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST https://api.github.com/repos/${LS_USER}/${LS_REPO}/releases -d @releasebody.json.done'''
