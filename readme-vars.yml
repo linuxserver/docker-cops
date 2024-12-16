@@ -116,7 +116,7 @@ init_diagram: |
   "cops:latest" <- Base Images
 # changelog
 changelogs:
-  - {date: "06.12.24:", desc: "Rebase to Alpine 3.21."}
+  - {date: "16.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "24.09.24:", desc: "Existing users should verify: site-confs/default.conf - Update rewriting rules default site conf."}
   - {date: "14.09.24:", desc: "Ensure user config files have the right permissions."}
   - {date: "09.09.24:", desc: "In COPS 3.x, the config_local.php is being moved over to config/local.php and this container will automatically migrate it. Existing users should verify: config_local.php and/or config/local.php - define $config['cops_kepubify_path'] if they want to use it"}
