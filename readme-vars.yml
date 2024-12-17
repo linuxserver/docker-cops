@@ -53,6 +53,9 @@ param_usage_include_ports: true
 param_ports:
   - {external_port: "80", internal_port: "80", port_desc: "HTTP WebUI"}
   - {external_port: "443", internal_port: "443", port_desc: "HTTPS WebUI"}
+readonly_supported: true
+readonly_message: |
+  * `/tmp` must be mounted to tmpfs
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |

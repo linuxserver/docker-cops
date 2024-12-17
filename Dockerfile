@@ -12,7 +12,6 @@ LABEL maintainer="chbmb"
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache --upgrade \
-    # libxml2 \
     php83-dom \
     php83-gd \
     php83-intl \
@@ -47,6 +46,10 @@ RUN \
     /usr/bin/kepubify -L \
     "https://github.com/pgaskin/kepubify/releases/download/${KEPUBIFY_RELEASE}/kepubify-linux-64bit" && \
   chmod 755 /usr/bin/kepubify && \
+  mkdir -p /defaults/config && \
+  cp /app/www/public/config/* /defaults/config && \
+  rm -rf /app/www/public/config && \
+  ln -s /config/config /app/www/public/config && \
   echo "**** cleanup ****" && \
   rm -rf \
     /root/.composer \

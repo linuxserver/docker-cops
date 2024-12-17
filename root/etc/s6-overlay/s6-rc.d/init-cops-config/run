@@ -8,19 +8,6 @@ mkdir -p \
 mkdir -p \
     /config/config
 
-# clear previous config (COPS 1.x and 2.x)
-for f in /app/www/public/config_local.*.php; do
-    if [ -f "$f" ]; then
-        rm "$f"
-    fi
-done
-# clear previous config (COPS 3.x)
-for f in /app/www/public/config/local.*.php; do
-    if [ -f "$f" ]; then
-        rm "$f"
-    fi
-done
-
 # copy config
 if [[ ! -e /config/config/local.php ]]; then
     if [[ -e /config/config_local.php ]]; then
@@ -28,15 +15,11 @@ if [[ ! -e /config/config/local.php ]]; then
         cp /config/config_local.php /config/config/local.php
     else
         echo "**** New instance detected, generating default config at /config/config/local.php ****"
-        cp /defaults/config/local.php /config/config/local.php
+        cp /defaults/local/local.php /config/config/
     fi
 fi
 
-# copy extra user-profiles
-for f in /config/config/local*.php; do
-    cp "${f}" /app/www/public/config/
-    chmod +r "/app/www/public/config/$(basename ${f})"
-done
+cp /defaults/config/* /config/config/
 
 # permissions
 lsiown -R abc:abc \
