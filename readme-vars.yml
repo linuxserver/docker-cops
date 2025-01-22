@@ -38,6 +38,7 @@ project_blurb: |
 
   If you want to use the OPDS feed don't forget to specify /feed at the end of your URL.
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Books"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
