@@ -24,7 +24,7 @@ c-ares                              1.34.3-r0                           apk
 ca-certificates                     20241121-r1                         apk             
 ca-certificates-bundle              20241121-r1                         apk             
 catatonit                           0.2.0-r0                            apk             
-composer                            2.8.5                               binary          
+composer                            2.8.6                               binary          
 concat-map                          0.0.1                               npm             
 corejs-typeahead                    1.3.4                               npm             
 coreutils                           9.5-r2                              apk             
