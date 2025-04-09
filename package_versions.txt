@@ -1,6 +1,6 @@
 NAME                                VERSION                             TYPE           
 @babel/runtime                      7.26.9                              npm             
-@mikespub/epubjs-reader             2025.01.02                          npm             
+@mikespub/epubjs-reader             2025.04.08                          npm             
 OPDSValidator                       UNKNOWN                             java-archive    
 acl-libs                            2.3.2-r1                            apk             
 alpine-baselayout                   3.6.8-r1                            apk             
@@ -93,7 +93,7 @@ logrotate                           3.21.0-r1                           apk
 lru-fast                            0.2.2                               npm             
 maennchen/zipstream-php             3.1.2                               php-composer    
 magnific-popup                      1.2.0                               npm             
-mikespub/epubjs-reader              2025.01.02                          php-composer    
+mikespub/epubjs-reader              2025.04.08                          php-composer    
 mikespub/php-epub-meta              3.3.5                               php-composer    
 minimatch                           3.0.8                               npm             
 musl                                1.2.5-r9                            apk             
