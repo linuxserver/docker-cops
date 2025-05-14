@@ -112,6 +112,7 @@ init_diagram: |
   "cops:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "14.05.25:", desc: "Existing users should verify: site-confs/default.conf and config/local.php - Clean-up default site conf and local.php."}
   - {date: "16.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "24.09.24:", desc: "Existing users should verify: site-confs/default.conf - Update rewriting rules default site conf."}
   - {date: "14.09.24:", desc: "Ensure user config files have the right permissions."}
