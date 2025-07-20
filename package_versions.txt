@@ -156,7 +156,7 @@ scanelf                             1.3.8-r1                            apk
 seblucas-cops                       UNKNOWN                             npm             
 shadow                              4.17.3-r0                           apk             
 skalibs-libs                        2.14.4.0-r0                         apk             
-sqlite-libs                         3.49.2-r0                           apk             
+sqlite-libs                         3.49.2-r1                           apk             
 ssl_client                          1.37.0-r18                          apk             
 stdlib                              go1.17.8                            go-module       
 symfony/config                      v7.2.6                              php-composer    
