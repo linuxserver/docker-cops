@@ -19,8 +19,8 @@ bash                                5.2.37-r0                           apk
 bootstrap                           3.4.1                               npm             
 brace-expansion                     1.1.12                              npm             
 brotli-libs                         1.1.0-r2                            apk             
-busybox                             1.37.0-r19                          apk             
-busybox-binsh                       1.37.0-r19                          apk             
+busybox                             1.37.0-r20                          apk             
+busybox-binsh                       1.37.0-r20                          apk             
 c-ares                              1.34.5-r0                           apk             
 ca-certificates                     20250911-r0                         apk             
 ca-certificates-bundle              20250911-r0                         apk             
@@ -50,7 +50,7 @@ golang.org/x/text                   v0.3.6                              go-modul
 icu-data-full                       76.1-r1                             apk             
 icu-libs                            76.1-r1                             apk             
 jing                                UNKNOWN                             java-archive    
-jq                                  1.8.0-r0                            apk             
+jq                                  1.8.1-r0                            apk             
 jquery                              3.7.1                               npm             
 js-cookie                           3.0.5                               npm             
 libapk2                             2.14.9-r3                           apk             
@@ -70,7 +70,7 @@ libintl                             0.24.1-r0                           apk
 libjpeg-turbo                       3.1.0-r0                            apk             
 libmd                               1.1.0-r0                            apk             
 libncursesw                         6.5_p20250503-r0                    apk             
-libpng                              1.6.47-r0                           apk             
+libpng                              1.6.51-r0                           apk             
 libproc2                            4.0.4-r3                            apk             
 libpsl                              0.21.5-r3                           apk             
 libsharpyuv                         1.5.0-r0                            apk             
@@ -160,7 +160,7 @@ seblucas-cops                       UNKNOWN                             npm
 shadow                              4.17.3-r0                           apk             
 skalibs-libs                        2.14.4.0-r0                         apk             
 sqlite-libs                         3.49.2-r1                           apk             
-ssl_client                          1.37.0-r19                          apk             
+ssl_client                          1.37.0-r20                          apk             
 stdlib                              go1.17.8                            go-module       
 symfony/config                      v7.4.0                              php-composer    
 symfony/deprecation-contracts       v3.6.0                              php-composer    
