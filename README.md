@@ -311,6 +311,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **08.02.26:** - Adding missing php-tokenizer package.
 * **10.10.25:** - Adding missing icu-data-full package.
 * **10.07.25:** - Rebase to Alpine 3.22.
 * **14.05.25:** - Existing users should verify: site-confs/default.conf and config/local.php - Clean-up default site conf and local.php.
