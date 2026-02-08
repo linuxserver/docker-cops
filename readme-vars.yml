@@ -114,6 +114,7 @@ init_diagram: |
   "cops:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "08.02.26:", desc: "Adding missing php-tokenizer package."}
   - {date: "10.10.25:", desc: "Adding missing icu-data-full package."}
   - {date: "10.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "14.05.25:", desc: "Existing users should verify: site-confs/default.conf and config/local.php - Clean-up default site conf and local.php."}
