@@ -1,4 +1,4 @@
-## Version 2025/07/10 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2026/02/10 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;
@@ -31,11 +31,6 @@ server {
         expires 31d;
     }
 
-    location /books {
-        root /;
-        internal;
-    }
-
     location ~ ^(.+\.php)(.*)$ {
         # enable the next two lines for http auth
         #auth_basic "Restricted";
@@ -48,8 +43,27 @@ server {
         include /etc/nginx/fastcgi_params;
     }
 
-    # deny access to .htaccess/.htpasswd files
-    location ~ /\.ht {
+    # use internal redirect location for X-Accel-Redirect - do not use /books/ or other COPS urls with front controller
+    location /_redirect_/ {
+        internal;
+        alias /books/;
+    }
+
+    # use front controller for COPS 4.2+
+    location ~ ^/(?!(index\.php|_redirect_)) {
+        try_files $uri /index.php$request_uri;
+    }
+
+    # deny access to all dotfiles
+    location ~ /\. {
         deny all;
+        log_not_found off;
+        access_log off;
+        return 404;
+    }
+
+    # Allow access to the ".well-known" directory
+    location ^~ /.well-known {
+        allow all;
     }
 }

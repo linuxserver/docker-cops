@@ -35,6 +35,13 @@ $config['cops_title_default'] = "COPS";
  */
 $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
 
+/*
+ * Map /books/ to internal redirect location for COPS 4.2+
+ */
+$config['cops_x_accel_mapping'] = [
+    '/books/' => '/_redirect_/',
+];
+
 /* Enable cache folder
  * especially useful for lower power hosts
  */
@@ -100,8 +107,6 @@ $config['cops_kepubify_path'] = '/usr/bin/kepubify';
  * - Nginx: nginx.conf
  * - PHP built-in: router.php
  * - ...
- *
- * @todo update nginx/site-confs/default.conf.sample to make use of front controller
  */
-$config['cops_front_controller'] = '';
-//$config['cops_front_controller'] = 'index.php';
+//$config['cops_front_controller'] = '';
+$config['cops_front_controller'] = 'index.php';
