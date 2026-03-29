@@ -244,7 +244,7 @@ libintl                                                                        0
 libjpeg-turbo                                                                  3.1.0-r0                            apk             
 libmd                                                                          1.1.0-r0                            apk             
 libncursesw                                                                    6.5_p20250503-r0                    apk             
-libpng                                                                         1.6.55-r0                           apk             
+libpng                                                                         1.6.56-r0                           apk             
 libproc2                                                                       4.0.4-r3                            apk             
 libpsl                                                                         0.21.5-r3                           apk             
 libsharpyuv                                                                    1.5.0-r0                            apk             
@@ -281,7 +281,7 @@ nano                                                                           8
 ncurses-terminfo-base                                                          6.5_p20250503-r0                    apk             
 netcat-openbsd                                                                 1.229.1-r0                          apk             
 nghttp2-libs                                                                   1.65.0-r0                           apk             
-nginx                                                                          1.28.2-r0                           apk             
+nginx                                                                          1.28.3-r0                           apk             
 normalize.css                                                                  8.0.1                               npm             
 npm-asset/babel--runtime                                                       v7.29.1                             php-composer    
 npm-asset/balanced-match                                                       1.0.2                               php-composer    
