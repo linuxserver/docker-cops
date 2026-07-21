@@ -114,6 +114,7 @@ init_diagram: |
   "cops:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "21.07.26:", desc: "Rebase to Alpine 3.24."}
   - {date: "10.06.26:", desc: "Existing users should verify: site-confs/default.conf and config/local.php - Update redirect location and use front controller."}
   - {date: "08.02.26:", desc: "Existing users should update: site-confs/default.conf - Deny access to all dotfiles."}
   - {date: "08.02.26:", desc: "Adding missing php-tokenizer package."}

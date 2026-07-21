@@ -311,6 +311,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **21.07.26:** - Rebase to Alpine 3.24.
 * **10.06.26:** - Existing users should verify: site-confs/default.conf and config/local.php - Update redirect location and use front controller.
 * **08.02.26:** - Existing users should update: site-confs/default.conf - Deny access to all dotfiles.
 * **08.02.26:** - Adding missing php-tokenizer package.
