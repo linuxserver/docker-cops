@@ -9,7 +9,7 @@ alpine-keys                         2.6-r0                              apk
 alpine-release                      3.24.1-r0                           apk             
 aom-libs                            3.14.1-r0                           apk             
 apache2-utils                       2.4.68-r0                           apk             
-apk-tools                           3.0.7-r0                            apk             
+apk-tools                           3.0.8-r0                            apk             
 apr                                 1.7.6-r0                            apk             
 apr-util                            1.6.4-r0                            apk             
 argon2-libs                         20190702-r5                         apk             
@@ -30,7 +30,7 @@ coreutils                           9.11-r0                             apk
 coreutils-env                       9.11-r0                             apk             
 coreutils-fmt                       9.11-r0                             apk             
 coreutils-sha512sum                 9.11-r0                             apk             
-curl                                8.21.0-r0                           apk             
+curl                                8.22.0-r0                           apk             
 dot                                 1.1.3                               npm             
 dot-express-example                 0.0.1                               npm             
 findutils                           4.10.0-r1                           apk             
@@ -47,16 +47,16 @@ golang.org/x/sync                   v0.0.0-20210220032951-036812b2e83c  go-modul
 golang.org/x/text                   v0.3.6                              go-module       
 icu-data-full                       78.1-r0                             apk             
 icu-libs                            78.1-r0                             apk             
-jq                                  1.8.1-r0                            apk             
+jq                                  1.8.2-r0                            apk             
 jquery                              3.7.1                               npm             
 js-cookie                           3.0.8                               npm             
-libapk                              3.0.7-r0                            apk             
+libapk                              3.0.8-r0                            apk             
 libattr                             2.5.2-r2                            apk             
 libavif                             1.4.1-r0                            apk             
 libbsd                              0.12.2-r0                           apk             
 libbz2                              1.0.8-r6                            apk             
 libcrypto3                          3.5.8-r0                            apk             
-libcurl                             8.21.0-r0                           apk             
+libcurl                             8.22.0-r0                           apk             
 libdav1d                            1.5.3-r0                            apk             
 libedit                             20260508.3.1-r1                     apk             
 libexpat                            2.8.4-r0                            apk             
@@ -175,6 +175,6 @@ twig/twig                           v3.27.1                             php-comp
 tzdata                              2026c-r0                            apk             
 utmps-libs                          0.1.3.3-r0                          apk             
 walk                                2.3.15                              npm             
-xz-libs                             5.8.3-r0                            apk             
+xz-libs                             5.8.4-r0                            apk             
 zlib                                1.3.2-r0                            apk             
 zstd-libs                           1.5.7-r2                            apk             
