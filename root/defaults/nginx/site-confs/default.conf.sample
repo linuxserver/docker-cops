@@ -1,4 +1,4 @@
-## Version 2026/02/10 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+## Version 2026/05/05 - Changelog: https://github.com/linuxserver/docker-cops/commits/master/root/defaults/nginx/site-confs/default.conf.sample
 
 server {
     listen 80 default_server;
@@ -14,6 +14,18 @@ server {
 
     root /app/www/public;
     index index.html index.htm index.php;
+
+    # Allow access to the ".well-known" directory
+    location ^~ /.well-known {
+        allow all;
+    }
+
+    # deny access to all dotfiles
+    location ~ /\. {
+        access_log off;
+        log_not_found off;
+        return 404;
+    }
 
     #URL rewriting with COPS deprecated - see https://github.com/mikespub-org/seblucas-cops/wiki/Url-Rewriting-with-COPS
     #location /download/ {
@@ -52,18 +64,5 @@ server {
     # use front controller for COPS 4.2+
     location ~ ^/(?!(index\.php|_redirect_)) {
         try_files $uri /index.php$request_uri;
-    }
-
-    # deny access to all dotfiles
-    location ~ /\. {
-        deny all;
-        log_not_found off;
-        access_log off;
-        return 404;
-    }
-
-    # Allow access to the ".well-known" directory
-    location ^~ /.well-known {
-        allow all;
     }
 }
