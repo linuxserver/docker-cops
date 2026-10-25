@@ -192,7 +192,7 @@ balanced-match                                                                 4
 bash                                                                           5.3.9-r1                            apk                            
 bootstrap                                                                      3.4.1                               npm                            
 brace-expansion                                                                5.0.12                              npm                            
-brotli-libs                                                                    1.2.0-r1                            apk                            
+brotli-libs                                                                    1.2.1-r0                            apk                            
 busybox                                                                        1.37.0-r31                          apk                            
 busybox-binsh                                                                  1.37.0-r31                          apk                            
 c-ares                                                                         1.34.9-r0                           apk                            
@@ -278,11 +278,11 @@ minimatch                                                                      1
 mozilla/pdfjs-dist                                                             6.3.289                             php-composer                   
 musl                                                                           1.2.6-r3                            apk                            
 musl-utils                                                                     1.2.6-r2                            apk                            
-nano                                                                           9.2-r0                              apk                            
+nano                                                                           9.3-r0                              apk                            
 ncurses-terminfo-base                                                          6.6_p20260516-r0                    apk                            
 netcat-openbsd                                                                 1.234.1-r0                          apk                            
 nghttp2-libs                                                                   1.70.0-r0                           apk                            
-nginx                                                                          1.30.4-r1                           apk                            
+nginx                                                                          1.30.6-r0                           apk                            
 normalize.css                                                                  8.0.1                               npm                            
 npm-asset/babel--runtime                                                       v7.29.8                             php-composer                   
 npm-asset/balanced-match                                                       4.0.4                               php-composer                   
