@@ -101,7 +101,7 @@ nano                              9.3-r0            apk
 ncurses-terminfo-base             6.6_p20260516-r0  apk             
 netcat-openbsd                    1.234.1-r0        apk             
 nghttp2-libs                      1.70.0-r0         apk             
-nginx                             1.30.6-r0         apk             
+nginx                             1.30.7-r0         apk             
 normalize.css                     8.0.1             npm             
 npm-asset/babel--runtime          7.29.10           php-composer    
 npm-asset/balanced-match          4.0.4             php-composer    
